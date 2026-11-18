@@ -14,6 +14,15 @@ const monday=new Date(issueDate+"T00:00:00Z");
 const previous=n=>new Date(monday.getTime()-n*86400000).toISOString().slice(0,10);
 const start=arg("--start")||previous(7),end=arg("--end")||previous(1);
 if(!dateOK(start)||!dateOK(end)||start>end)throw Error("Invalid period");
+const fcmSources=[
+ {region:"미국",category:"FDA 식품접촉",q:"site:fda.gov food contact substances regulation amendment notification"},
+ {region:"EU",category:"EU FCM",q:"site:eur-lex.europa.eu food contact materials plastics regulation amendment 10/2011"},
+ {region:"EU",category:"EFSA FCM",q:"site:efsa.europa.eu food contact materials scientific opinion regulation"},
+ {region:"한국",category:"식품용 기구·용기·포장",q:"식약처 기구 및 용기 포장 기준 규격 개정 고시"},
+ {region:"중국",category:"GB 4806",q:"食品接触材料 GB 4806 标准 修订 发布 实施"},
+ {region:"일본",category:"식품용 기구·용기·포장",q:"食品用器具 容器包装 ポジティブリスト 改正 施行"},
+ {region:"국제",category:"FCM 국제",q:"food contact materials regulation amendment migration limits"}
+];
 const sources=[
  {region:"미국",category:"UL",q:'"UL Solutions" electrical safety certification OR "UL standard" appliance'},
  {region:"미국",category:"UL",q:'"UL 60335" OR "UL 60745" OR "UL 62368" safety standard'},
@@ -69,9 +78,10 @@ const fallbackQueries={
 };
 const relevant=/電気用品|技術基準|改正|施行|强制性|认证|认监委|电器|安全标准|修订|实施规则|\bUL\b|\bCE\b|\bEMC\b|\bErP\b|\bRoHS\b|\bKC\b|\bCCC\b|\bCNCA\b|\bPSE\b|\bIEC\b|\bISO\b|\bIECEE\b|\bBIS\b|\bSNI\b|\bCR mark\b|\bICC\b|\bPS mark\b|electrical safety|product safety|conformity|certification|ecodesign|전기안전|안전인증|전기용품|안전기준/i;
 const direct=await crawlOfficial(start,end);
-const results=[...direct.items];const failures=[];let success=0;
+const results=[...direct.items];
+const fcmResults=[];const failures=[];let success=0;
 for(const entry of direct.items){regionStats[entry.region].accepted++}
-for(const source of [...officialSources.map(x=>({...x,officialSearch:true,q:"site:"+x.domain+" "+x.q})),...sources]){
+for(const source of [...fcmSources.map(x=>({...x,fcm:true})),...officialSources.map(x=>({...x,officialSearch:true,q:"site:"+x.domain+" "+x.q})),...sources]){
  try{
   const query=source.q+" after:"+start+" before:"+nextDay;
   const locale=source.region==="일본"?"hl=ja&gl=JP&ceid=JP:ja":source.region==="한국"?"hl=ko&gl=KR&ceid=KR:ko":source.region==="중국"?"hl=zh-CN&gl=CN&ceid=CN:zh-Hans":"hl=en-US&gl=US&ceid=US:en";
@@ -83,7 +93,7 @@ for(const source of [...officialSources.map(x=>({...x,officialSearch:true,q:"sit
   regionStats[source.region].returned+=feed.items.length;
   for(const entry of feed.items){
    const title=String(entry.title||"").trim();
-   if(!relevant.test(title)&&!source.officialSearch)continue;
+   if(!source.fcm&&!relevant.test(title)&&!source.officialSearch)continue;
    const rawDate=entry.isoDate||entry.pubDate;
    if(!rawDate||Number.isNaN(Date.parse(rawDate)))continue;
    const day=new Date(rawDate).toISOString().slice(0,10);
@@ -92,7 +102,7 @@ for(const source of [...officialSources.map(x=>({...x,officialSearch:true,q:"sit
    if(!/^https:\/\//.test(link))continue;
    const snippet=String(entry.contentSnippet||entry.content||"").replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();
    const id=crypto.createHash("sha256").update(title.toLowerCase()).digest("hex").slice(0,16);
-   results.push({id,title,summary:snippet.slice(0,850)||title,region:source.region,category:source.category,date:day,url:link,source:entry.creator||entry.source?.title||"Google News RSS",sourceType:source.officialSearch?"official-site-search":"news-search",verification:"검색 결과 — 공식 원문 확인 필요"});
+   (source.fcm?fcmResults:results).push({id,title,summary:snippet.slice(0,850)||title,region:source.region,category:source.category,date:day,url:link,source:entry.creator||entry.source?.title||"Google News RSS",sourceType:source.officialSearch?"official-site-search":"news-search",verification:"검색 결과 — 공식 원문 확인 필요"});
    regionStats[source.region].accepted++;
   }
  }catch(e){failures.push(source.region+"/"+source.category+": "+e.message);regionStats[source.region].errors.push(source.category+": "+e.message);console.error("Feed failure:",source.category,e.message)}
@@ -123,6 +133,9 @@ for(const [region,query] of Object.entries(fallbackQueries)){
  }catch(e){regionStats[region].errors.push("fallback: "+e.message);failures.push(region+"/fallback: "+e.message)}
 }
 
+const fcmStandard=/food.contact|food contact|FCM|migration limit|食品接触|食品用器具|容器包装|기구.{0,4}용기.{0,4}포장|식품접촉|식품용 기구|GB\\s*4806|EU\\s*10\\/2011|positive list|ポジティブリスト/i;
+const fcmChange=/amend|revis|regulat|new standard|updated|effective|restriction|limit|notification|개정|고시|시행|변경|修订|发布|实施|改正|施行|規格|基準/i;
+const fcmItems=[...new Map(fcmResults.filter(i=>fcmStandard.test(i.title)&&fcmChange.test(i.title)).map(i=>[i.id,i])).values()].sort((a,b)=>b.date.localeCompare(a.date));
 const rank=t=>t==="official-direct"?3:t==="official-site-search"?2:1;
 const items=[...new Map(results.filter(isRegulatoryChange).sort((a,b)=>rank(a.sourceType)-rank(b.sourceType)).map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
 // An empty weekly issue is valid when source checks succeed.
@@ -137,14 +150,14 @@ async function translate(value){
   return (data?.[0]||[]).map(p=>p?.[0]||"").join("").trim()||value;
  }catch(e){console.warn("Translation failed",e.message);return value}
 }
-for(const item of items){item.titleKo=await translate(item.title);item.summaryKo=await translate(item.summary)}
+for(const item of [...items,...fcmItems]){item.titleKo=await translate(item.title);item.summaryKo=await translate(item.summary)}
 const coveredRegions=["미국","EU","한국","중국","일본","국제","기타"];
 const regionStatus=Object.fromEntries(coveredRegions.map(region=>{
  const count=items.filter(item=>item.region===region).length;
  const stats=regionStats[region];
  return [region,{count,status:count>0?"수집됨":stats.errors.length>=stats.queries&&stats.queries>0?"수집 오류":"해당 기간 검색 결과 없음 또는 확인 불가",queries:stats.queries,returned:stats.returned,errors:stats.errors}];
 }));
-const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,collection:{source:"Official direct HTML crawl + Google News RSS",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,filteredOut:results.length-items.length,failures}};
+const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,fcmItems,collection:{source:"Official direct HTML crawl + Google News RSS",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,filteredOut:results.length-items.length,failures}};
 await fs.mkdir("data/archive",{recursive:true});
 await fs.writeFile("data/archive/"+issueDate+".json",JSON.stringify(output,null,2)+"\n");
 await fs.writeFile("data/latest.json",JSON.stringify(output,null,2)+"\n");
