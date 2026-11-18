@@ -1,0 +1,16 @@
+[
+  {
+    "id": "fcc",
+    "name": "US Federal Register / FCC",
+    "region": "미국",
+    "category": "EMC·무선",
+    "url": "https://www.federalregister.gov/documents/search.rss?conditions%5Bagencies%5D%5B%5D=federal-communications-commission"
+  },
+  {
+    "id": "doe",
+    "name": "US Federal Register / DOE",
+    "region": "미국",
+    "category": "에너지효율",
+    "url": "https://www.federalregister.gov/documents/search.rss?conditions%5Bagencies%5D%5B%5D=energy-department"
+  }
+]
