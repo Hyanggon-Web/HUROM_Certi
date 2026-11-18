@@ -1,0 +1,1 @@
+import "./globals.css";export const metadata={title:"CertScope Weekly | 글로벌 인증 동향",description:"전기전자·가전 제조기업을 위한 인증 규제 주간 브리핑"};export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ko"><body>{children}</body></html>}
