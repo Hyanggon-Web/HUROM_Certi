@@ -133,7 +133,7 @@ for(const [region,query] of Object.entries(fallbackQueries)){
  }catch(e){regionStats[region].errors.push("fallback: "+e.message);failures.push(region+"/fallback: "+e.message)}
 }
 
-const fcmStandard=/food.contact|food contact|FCM|migration limit|食品接触|食品用器具|容器包装|기구.{0,4}용기.{0,4}포장|식품접촉|식품용 기구|GB\\s*4806|EU\\s*10\\/2011|positive list|ポジティブリスト/i;
+const fcmStandard=/food.contact|FCM|migration limit|食品接触|食品用器具|容器包装|기구.{0,4}용기.{0,4}포장|식품접촉|식품용 기구|GB\s*4806|EU\s*10\/2011|positive list|ポジティブリスト/i;
 const fcmChange=/amend|revis|regulat|new standard|updated|effective|restriction|limit|notification|개정|고시|시행|변경|修订|发布|实施|改正|施行|規格|基準/i;
 const fcmItems=[...new Map(fcmResults.filter(i=>fcmStandard.test(i.title)&&fcmChange.test(i.title)).map(i=>[i.id,i])).values()].sort((a,b)=>b.date.localeCompare(a.date));
 const rank=t=>t==="official-direct"?3:t==="official-site-search"?2:1;
