@@ -139,6 +139,8 @@ for(const [region,query] of Object.entries(fallbackQueries)){
 const fcmStandard=/food.contact|FCM|migration limit|食品接触|食品用器具|容器包装|기구.{0,6}용기.{0,6}포장|식품접촉|식품용 기구|GB\s*4806|EU\s*10\/2011|positive list|ポジティブリスト|식약처|식품의약품안전처/i;
 const fcmChange=/amend|revis|regulat|new standard|updated|effective|restriction|limit|notification|개정|고시|시행|변경|修订|发布|实施|改正|施行|規格|基準/i;
 const fcmItems=[...new Map(fcmResults.filter(i=>fcmStandard.test(i.title+" "+i.summary)&&fcmChange.test(i.title+" "+i.summary)).map(i=>[i.id,i])).values()].sort((a,b)=>b.date.localeCompare(a.date));
+fcmStats.rejected=fcmResults.filter(i=>!fcmStandard.test(i.title+" "+i.summary)||!fcmChange.test(i.title+" "+i.summary)).map(i=>({title:i.title,region:i.region,date:i.date,reason:!fcmStandard.test(i.title+" "+i.summary)?"FCM subject not matched":"Regulatory change not matched"}));
+console.log("FCM diagnostic",JSON.stringify(fcmStats));
 fcmStats.accepted=fcmItems.length;
 const rank=t=>t==="official-direct"?3:t==="official-site-search"?2:1;
 const items=[...new Map(results.filter(isRegulatoryChange).sort((a,b)=>rank(a.sourceType)-rank(b.sourceType)).map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
