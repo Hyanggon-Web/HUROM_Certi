@@ -1,3 +1,4 @@
+import {crawlOfficial} from "./crawl-official.mjs";
 import fs from "node:fs/promises";
 import crypto from "node:crypto";
 import Parser from "rss-parser";
@@ -66,7 +67,9 @@ const fallbackQueries={
  "기타":'"BIS certification" OR "SNI certification" OR "electrical safety certification"'
 };
 const relevant=/\bUL\b|\bCE\b|\bEMC\b|\bErP\b|\bRoHS\b|\bKC\b|\bCCC\b|\bCNCA\b|\bPSE\b|\bIEC\b|\bISO\b|\bIECEE\b|\bBIS\b|\bSNI\b|\bCR mark\b|\bICC\b|\bPS mark\b|electrical safety|product safety|conformity|certification|ecodesign|전기안전|안전인증|전기용품|안전기준/i;
-const results=[];const failures=[];let success=0;
+const direct=await crawlOfficial(start,end);
+const results=[...direct.items];const failures=[];let success=0;
+for(const entry of direct.items){regionStats[entry.region].accepted++}
 for(const source of [...officialSources.map(x=>({...x,officialSearch:true,q:"site:"+x.domain+" "+x.q})),...sources]){
  try{
   const query=source.q+" after:"+start+" before:"+nextDay;
@@ -92,7 +95,7 @@ for(const source of [...officialSources.map(x=>({...x,officialSearch:true,q:"sit
   }
  }catch(e){failures.push(source.region+"/"+source.category+": "+e.message);regionStats[source.region].errors.push(source.category+": "+e.message);console.error("Feed failure:",source.category,e.message)}
 }
-if(success===0)throw Error("All news sources failed. Existing issue preserved.");
+if(success===0&&!direct.status.some(s=>s.checked))throw Error("All sources failed. Existing issue preserved.");
 // Retry regions with no accepted items using broader search terms, retaining the issue date window.
 for(const [region,query] of Object.entries(fallbackQueries)){
  if(regionStats[region].accepted>0)continue;
@@ -117,8 +120,9 @@ for(const [region,query] of Object.entries(fallbackQueries)){
  }catch(e){regionStats[region].errors.push("fallback: "+e.message);failures.push(region+"/fallback: "+e.message)}
 }
 
-const items=[...new Map(results.sort((a,b)=>(a.sourceType==="official-site-search"?-1:1)-(b.sourceType==="official-site-search"?-1:1)).map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
-if(items.length===0)throw Error("No matching electrical safety news. Existing issue preserved.");
+const rank=t=>t==="official-direct"?3:t==="official-site-search"?2:1;
+const items=[...new Map(results.sort((a,b)=>rank(a.sourceType)-rank(b.sourceType)).map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
+// An empty weekly issue is valid when source checks succeed.
 async function translate(value){
  if(!value||/[가-힣]/.test(value))return value;
  try{
@@ -137,7 +141,7 @@ const regionStatus=Object.fromEntries(coveredRegions.map(region=>{
  const stats=regionStats[region];
  return [region,{count,status:count>0?"수집됨":stats.errors.length>=stats.queries&&stats.queries>0?"수집 오류":"해당 기간 검색 결과 없음 또는 확인 불가",queries:stats.queries,returned:stats.returned,errors:stats.errors}];
 }));
-const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,collection:{source:"Google News RSS (official-site targeted search + news)",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,failures}};
+const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,collection:{source:"Official direct HTML crawl + Google News RSS",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,failures}};
 await fs.mkdir("data/archive",{recursive:true});
 await fs.writeFile("data/archive/"+issueDate+".json",JSON.stringify(output,null,2)+"\n");
 await fs.writeFile("data/latest.json",JSON.stringify(output,null,2)+"\n");
