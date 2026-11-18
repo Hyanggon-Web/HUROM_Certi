@@ -34,14 +34,21 @@
   ],
   "fcmItems": [],
   "collection": {
+    "fcmStats": {
+      "queries": 7,
+      "returned": 7,
+      "candidates": 3,
+      "accepted": 0,
+      "errors": []
+    },
     "source": "Official direct HTML crawl + Google News RSS",
     "successfulQueries": 44,
     "totalQueries": 37,
     "regionStats": {
       "미국": {
         "queries": 5,
-        "returned": 9,
-        "accepted": 7,
+        "returned": 7,
+        "accepted": 6,
         "errors": []
       },
       "EU": {
@@ -52,13 +59,13 @@
       },
       "한국": {
         "queries": 5,
-        "returned": 19,
+        "returned": 18,
         "accepted": 12,
         "errors": []
       },
       "중국": {
         "queries": 6,
-        "returned": 1,
+        "returned": 3,
         "accepted": 0,
         "errors": []
       },
@@ -70,8 +77,8 @@
       },
       "국제": {
         "queries": 7,
-        "returned": 6,
-        "accepted": 3,
+        "returned": 9,
+        "accepted": 5,
         "errors": []
       },
       "기타": {
@@ -86,7 +93,7 @@
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 5,
-        "returned": 9,
+        "returned": 7,
         "errors": []
       },
       "EU": {
@@ -100,14 +107,14 @@
         "count": 1,
         "status": "수집됨",
         "queries": 5,
-        "returned": 19,
+        "returned": 18,
         "errors": []
       },
       "중국": {
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 6,
-        "returned": 1,
+        "returned": 3,
         "errors": []
       },
       "일본": {
@@ -121,7 +128,7 @@
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 7,
-        "returned": 6,
+        "returned": 9,
         "errors": []
       },
       "기타": {
@@ -161,9 +168,9 @@
         "region": "한국",
         "name": "국가기술표준원 고시·공고",
         "url": "https://www.kats.go.kr/content.do?cmsid=239",
-        "checked": true,
+        "checked": false,
         "accepted": 0,
-        "error": null
+        "error": "The operation was aborted due to timeout"
       },
       {
         "region": "중국",
