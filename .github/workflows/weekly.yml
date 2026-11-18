@@ -3,25 +3,46 @@ on:
   schedule:
     - cron: '0 23 * * 0'
   workflow_dispatch:
+    inputs:
+      initial_issue:
+        description: 'Create inaugural issue (Nov 10-15, 2026)'
+        required: false
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/weekly.yml'
 permissions:
   contents: write
+concurrency:
+  group: weekly-certification-publish
+  cancel-in-progress: false
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-audit --no-fund
-      - run: npm run update
-      - name: Publish
+      - name: Collect official regulatory publications
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INITIAL_ISSUE: ${{ inputs.initial_issue }}
+        run: |
+          if [ "$EVENT_NAME" = "push" ] || [ "$INITIAL_ISSUE" = "true" ]; then
+            node scripts/update.mjs --start 2026-11-10 --end 2026-11-15 --issue-date 2026-11-16
+          else
+            node scripts/update.mjs
+          fi
+      - name: Publish collected data
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/
           if ! git diff --cached --quiet; then
-            git commit -m 'chore: weekly certification updates'
+            git commit -m 'data: publish certification weekly issue'
             git push
           fi
