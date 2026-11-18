@@ -1,16 +1,26 @@
 {
-  "generatedAt": "2026-11-15T23:00:00.000Z",
-  "periodStart": "2026-11-10",
-  "periodEnd": "2026-11-15",
+  "generatedAt": "2026-11-17T23:00:00.000Z",
+  "periodStart": "2026-11-11",
+  "periodEnd": "2026-11-17",
   "items": [
     {
-      "id": "fcc-2026-23040",
-      "title": "미국 FCC, 전국 TV 방송국 소유 상한 규정 폐지",
-      "summary": "미국 FCC가 전국 TV 방송국 소유에 관한 39% 시청가구 도달률 상한 규정을 폐지하는 최종 규칙을 11월 12일 공표했습니다. 방송사업자 소유 규제에 관한 변경으로, 일반 가전제품의 FCC 기기 인증 요건 변경은 아닙니다.",
+      "id": "1fe5fb1f0b536cbf",
+      "title": "Protecting Consumers From SIM-Swap and Port-Out Fraud",
+      "summary": "In this document, the Wireline Competition Bureau (Bureau) announces that the Office of Management and Budget (OMB) has approved, for a period of three years, the information collection associated with the Commission's rules adopted in the SIM Swap and Port-Out Fraud Order, FCC 23-95. This document is consistent with that Order, which stated that the revised rules would not become effective until OMB completed its review of any information collection requirements under the Paperwork Reduction Act and that the Bureau would announce the compliance date for the revised rules by subsequent Public Notice and cause the Commission's rules to be revised accordingly.",
       "region": "미국",
-      "category": "방송 규제·간접 관련",
+      "category": "EMC·무선",
+      "date": "2026-11-17",
+      "url": "https://www.federalregister.gov/documents/2026/11/17/2026-23400/protecting-consumers-from-sim-swap-and-port-out-fraud",
+      "source": "Federal Register / FCC"
+    },
+    {
+      "id": "a1098cf2e02883db",
+      "title": "Television Broadcasting Services, St. George, Utah",
+      "summary": "This document amends the Table of TV Allotments (Table) of the Federal Communications Commission's (Commission) rules by substituting VHF channel 9 for UHF channel 21 at St. George, Utah in response to a petition for rulemaking filed by KUTV Licensee, LLC (Licensee), licensee of full power television station KMYU(TV) (KMYU or Station), St. George, Utah. The Media Bureau (Bureau) previously granted a petition for rulemaking submitted by the Licensee to substitute UHF channel 21 for VHF channel 9 at St. George, Utah in the Table. The Licensee subsequently filed an application for a construction permit for its new channel, which remains pending due to certain unresolved engineering matters. The Licensee now states that upon further consideration and restraints, it wishes to abandon its plans to modify its license for KMYU to operate on chann",
+      "region": "미국",
+      "category": "EMC·무선",
       "date": "2026-11-12",
-      "url": "https://www.govinfo.gov/content/pkg/FR-2026-11-12/html/2026-23040.htm",
+      "url": "https://www.federalregister.gov/documents/2026/11/12/2026-23041/television-broadcasting-services-st-george-utah",
       "source": "Federal Register / FCC"
     }
   ]
