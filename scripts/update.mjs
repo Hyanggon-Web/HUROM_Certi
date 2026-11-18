@@ -51,6 +51,23 @@ for(const agency of agencies){
 if(successes!==agencies.length)throw Error("Source collection incomplete; previous issue preserved");
 items=[...new Map(items.map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
 if(items.length===0)throw Error("Zero matching publications: refusing to overwrite published issue. Check agency filters and date range.");
+async function translateKo(value){
+ if(!value||/[가-힣]/.test(value))return value;
+ try{
+  const url=new URL("https://translate.googleapis.com/translate_a/single");
+  url.searchParams.set("client","gtx");url.searchParams.set("sl","auto");url.searchParams.set("tl","ko");url.searchParams.set("dt","t");url.searchParams.set("q",value.slice(0,1200));
+  const response=await fetch(url,{signal:AbortSignal.timeout(15000)});
+  if(!response.ok)throw Error("HTTP "+response.status);
+  const result=await response.json();
+  const translated=(result?.[0]||[]).map(part=>part?.[0]||"").join("").trim();
+  return translated||value;
+ }catch(error){console.warn("Translation unavailable:",error.message);return value;}
+}
+for(const item of items){
+ item.titleKo=await translateKo(item.title);
+ item.summaryKo=await translateKo(item.summary||item.title);
+ item.translated=item.titleKo!==item.title||item.summaryKo!==item.summary;
+}
 const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:startDate,periodEnd:endDate,items};
 await fs.mkdir("data/archive",{recursive:true});
 await fs.writeFile("data/archive/"+issueDate+".json",JSON.stringify(output,null,2)+"\n");
