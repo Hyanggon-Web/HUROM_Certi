@@ -15,13 +15,13 @@ const previous=n=>new Date(monday.getTime()-n*86400000).toISOString().slice(0,10
 const start=arg("--start")||previous(7),end=arg("--end")||previous(1);
 if(!dateOK(start)||!dateOK(end)||start>end)throw Error("Invalid period");
 const fcmSources=[
- {region:"미국",category:"FDA 식품접촉",q:""food contact" FDA regulation amendment"},
- {region:"EU",category:"EU FCM",q:""food contact materials" EU regulation amendment"},
- {region:"EU",category:"EFSA FCM",q:"EFSA "food contact" plastics migration"},
- {region:"한국",category:"식품용 기구·용기·포장",q:""기구 및 용기·포장" 개정"},
- {region:"중국",category:"GB 4806",q:"食品接触材料 标准 修订"},
- {region:"일본",category:"식품용 기구·용기·포장",q:"食品用器具 容器包装 改正"},
- {region:"국제",category:"FCM 국제",q:""food contact" regulation migration limit"}
+ {region:"미국",category:"FDA 식품접촉",q:'"food contact" FDA regulation amendment'},
+ {region:"EU",category:"EU FCM",q:'"food contact materials" EU regulation amendment'},
+ {region:"EU",category:"EFSA FCM",q:'EFSA "food contact" plastics migration'},
+ {region:"한국",category:"식품용 기구·용기·포장",q:'"기구 및 용기·포장" 개정'},
+ {region:"중국",category:"GB 4806",q:'食品接触材料 标准 修订'},
+ {region:"일본",category:"식품용 기구·용기·포장",q:'食品用器具 容器包装 改正'},
+ {region:"국제",category:"FCM 국제",q:'"food contact" regulation migration limit'}
 ];
 const sources=[
  {region:"미국",category:"UL",q:'"UL Solutions" electrical safety certification OR "UL standard" appliance'},
