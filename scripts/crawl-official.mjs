@@ -5,7 +5,7 @@ export const officialPages=[
  {region:"미국",category:"UL",url:"https://ulse.org/",name:"UL Standards & Engagement"},
  {region:"EU",category:"CE·EMC·ErP·RoHS",url:"https://single-market-economy.ec.europa.eu/",name:"European Commission"},
  {region:"EU",category:"CE·EMC·ErP·RoHS",url:"https://eur-lex.europa.eu/",name:"EUR-Lex"},
- {region:"한국",category:"KC",url:"https://www.kats.go.kr/",name:"국가기술표준원"},
+ {region:"한국",category:"KC",url:"https://www.kats.go.kr/content.do?cmsid=239",name:"국가기술표준원 고시·공고",board:true},
  {region:"중국",category:"CCC·CNCA",url:"https://www.cnca.gov.cn/",name:"CNCA"},
  {region:"중국",category:"CCC·CNCA",url:"https://www.samr.gov.cn/",name:"SAMR"},
  {region:"일본",category:"PSE",url:"https://www.meti.go.jp/",name:"METI"},
@@ -34,10 +34,12 @@ export async function crawlOfficial(start,end){
    record.checked=true;
    const base=new URL(res.url);
    for(const match of html.matchAll(/<a\b([^>]*?)href\s*=\s*["']([^"']+)["']([^>]*)>([\s\S]*?)<\/a>/gi)){
-    const title=plain(match[4]);if(title.length<14||title.length>230||!signal.test(title))continue;
+    const title=plain(match[4]);if(title.length<8||title.length>230||!signal.test(title))continue;
     let link;try{link=new URL(match[2],base)}catch{continue}
     if(link.protocol!=="https:"||link.hostname!==base.hostname)continue;
-    const date=dateOf(link.pathname,title);
+    if(site.board&&!(link.searchParams.get("cid")&&link.searchParams.get("mode")==="view"))continue;
+    const context=site.board?plain(html.slice(Math.max(0,match.index-280),Math.min(html.length,match.index+match[0].length+280))):title;
+    const date=dateOf(link.pathname,context);
     if(!date||date<start||date>end)continue;
     const url=link.href.split("#")[0];
     items.push({id:crypto.createHash("sha256").update(url).digest("hex").slice(0,16),title,summary:title,region:site.region,category:site.category,date,url,source:site.name,sourceType:"official-direct",verification:"공식기관 웹페이지에서 링크 수집 · 내용 확인 필요"});
