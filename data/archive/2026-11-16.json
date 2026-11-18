@@ -4,14 +4,36 @@
   "periodEnd": "2026-11-15",
   "items": [
     {
-      "id": "fcc-2026-23040",
-      "title": "미국 FCC, 전국 TV 방송국 소유 상한 규정 폐지",
-      "summary": "미국 FCC가 전국 TV 방송국 소유에 관한 39% 시청가구 도달률 상한 규정을 폐지하는 최종 규칙을 11월 12일 공표했습니다. 방송사업자 소유 규제에 관한 변경으로, 일반 가전제품의 FCC 기기 인증 요건 변경은 아닙니다.",
-      "region": "미국",
-      "category": "방송 규제·간접 관련",
+      "id": "a3a14f1de840b5dd",
+      "title": "Chennai-Based CCTV and AI surveillance solutions Brand, HiFocus, crosses 70 BIS ER Security-Registered CCTV Camera Models - TheWire.in",
+      "summary": "Chennai-Based CCTV and AI surveillance solutions Brand, HiFocus, crosses 70 BIS ER Security-Registered CCTV Camera Models TheWire.in",
+      "region": "기타",
+      "category": "인도 BIS",
+      "date": "2026-11-13",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPOU1RYWZod2RLVFpOS1JFWWpydGlNVjBCM0NPa01jREEyMmE0WDhfemY5aXBtd0wtZlc4T0dLX2paamtZQ1cxUENXLTE1Z0JQU3RoZ3otdlQ5MGpoMUtSc0JxN1BqZXFCRy1rRjlpOXpQbzhnc0VfVlBxU0REUmdkU0w1QTVGclpCOEJmVEVwbG5tY0MxX0x0ajQ3YmVXTERvcFpxZGJReU1TOGxCRDRWT3JyYklDV29aLTJxZ0pIczlKeDhyRExPTEd3UDhjcXZmRXFIamRVSVN4NTZrQW5MTTJ2Mm9pU2NVMThBb1daUdIB9AFBVV95cUxQbVJVUFpRWVdkOFpIU3ZDMWtjLTJHdXoxeU1hUG1DUzBXZ053RFlJcnZXQ3IzUEkzMHBIVk1KMTR2bl92bzZ4bndyRzhIMWNSTmQ0LU1IOXdwU2cxU1VVQU14UkxkOGVjSHZrWjRRZWYteG9DNzZnbkVWUjk0MnlFVWUyTFlrNldPdmJNenZJNHg2UjJaQXR1dHRKNmE1eV84OV9QNGNwMmZ0WXM2Yi04ckt4a3RWRllZcEIxa0ZfbjI1LUNxZDI5WWdNUkRFSWdhSUltNDVDMnE0WHNPemVyWm9fRmZhYUN2TEttelRFWkZLXy03?oc=5",
+      "source": "Google News RSS",
+      "sourceType": "news-search",
+      "titleKo": "첸나이 기반 CCTV 및 AI 감시 솔루션 브랜드 HiFocus, BIS ER 보안 등록 CCTV 카메라 모델 70개 돌파 - TheWire.in",
+      "summaryKo": "첸나이 기반 CCTV 및 AI 감시 솔루션 브랜드 HiFocus, BIS ER 보안 등록 CCTV 카메라 모델 70개 돌파 TheWire.in"
+    },
+    {
+      "id": "c5088e371bf71d6b",
+      "title": "India Clarifies BIS and CDSCO Scope for Electrical Appliances - MPR India Certification",
+      "summary": "India Clarifies BIS and CDSCO Scope for Electrical Appliances MPR India Certification",
+      "region": "기타",
+      "category": "인도 BIS",
       "date": "2026-11-12",
-      "url": "https://www.govinfo.gov/content/pkg/FR-2026-11-12/html/2026-23040.htm",
-      "source": "Federal Register / FCC"
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxONFA0dXJvX0JMY1lMbE1rUGxlc0owQnhDU0R0OFQ1TXJESklEM2RSVzc3c2l1aktSMXFMMDBQdkxtS1VHdzZ5SnRPeGdWSXJtdnhkTDFyVGU2OUNHZ3J0UWRfbktCZzNybmc4T2ZURmNqcDktb09RR0tRNVN0aldzLVZkeWZUMllGYUZHTE1aUFRfbEpiTDNqdGh2V0l0Z28xN0d3?oc=5",
+      "source": "Google News RSS",
+      "sourceType": "news-search",
+      "titleKo": "인도, 전기 기기에 대한 BIS 및 CDSCO 범위 명시 - MPR 인도 인증",
+      "summaryKo": "인도, 전기 기기 MPR 인도 인증에 대한 BIS 및 CDSCO 범위 명시"
     }
-  ]
+  ],
+  "collection": {
+    "source": "Google News RSS",
+    "successfulQueries": 19,
+    "totalQueries": 19,
+    "failures": []
+  }
 }
