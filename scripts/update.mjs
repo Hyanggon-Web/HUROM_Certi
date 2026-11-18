@@ -73,7 +73,8 @@ for(const entry of direct.items){regionStats[entry.region].accepted++}
 for(const source of [...officialSources.map(x=>({...x,officialSearch:true,q:"site:"+x.domain+" "+x.q})),...sources]){
  try{
   const query=source.q+" after:"+start+" before:"+nextDay;
-  const url="https://news.google.com/rss/search?q="+encodeURIComponent(query)+"&hl=en-US&gl=US&ceid=US:en";
+  const locale=source.region==="한국"?"hl=ko&gl=KR&ceid=KR:ko":"hl=en-US&gl=US&ceid=US:en";
+  const url="https://news.google.com/rss/search?q="+encodeURIComponent(query)+"&"+locale;
   const feed=await parser.parseURL(url);
   if(!Array.isArray(feed.items))throw Error("Invalid feed");
   success++;
@@ -100,7 +101,8 @@ if(success===0&&!direct.status.some(s=>s.checked))throw Error("All sources faile
 for(const [region,query] of Object.entries(fallbackQueries)){
  if(regionStats[region].accepted>0)continue;
  try{
-  const url="https://news.google.com/rss/search?q="+encodeURIComponent(query+" after:"+start+" before:"+nextDay)+"&hl=en-US&gl=US&ceid=US:en";
+  const locale=region==="한국"?"hl=ko&gl=KR&ceid=KR:ko":"hl=en-US&gl=US&ceid=US:en";
+  const url="https://news.google.com/rss/search?q="+encodeURIComponent(query+" after:"+start+" before:"+nextDay)+"&"+locale;
   const feed=await parser.parseURL(url);
   if(!Array.isArray(feed.items))throw Error("Invalid fallback feed");
   regionStats[region].queries++;regionStats[region].returned+=feed.items.length;
