@@ -2,5 +2,16 @@
   "generatedAt": "2026-11-15T23:00:00.000Z",
   "periodStart": "2026-11-10",
   "periodEnd": "2026-11-15",
-  "items": []
+  "items": [
+    {
+      "id": "fcc-2026-23040",
+      "title": "미국 FCC, 전국 TV 방송국 소유 상한 규정 폐지",
+      "summary": "미국 FCC가 전국 TV 방송국 소유에 관한 39% 시청가구 도달률 상한 규정을 폐지하는 최종 규칙을 11월 12일 공표했습니다. 방송사업자 소유 규제에 관한 변경으로, 일반 가전제품의 FCC 기기 인증 요건 변경은 아닙니다.",
+      "region": "미국",
+      "category": "방송 규제·간접 관련",
+      "date": "2026-11-12",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-11-12/html/2026-23040.htm",
+      "source": "Federal Register / FCC"
+    }
+  ]
 }
