@@ -39,7 +39,27 @@
       "returned": 7,
       "candidates": 3,
       "accepted": 0,
-      "errors": []
+      "errors": [],
+      "rejected": [
+        {
+          "title": "China’s food-grade rPET approval could reshape global recycling markets - Plastics News",
+          "region": "미국",
+          "date": "2026-11-10",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "Top 9 Thermal Laminating Rolls Manufacturers 2026: Heat-Activated Film for Equipment and Packaging - EIN News",
+          "region": "국제",
+          "date": "2026-11-13",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "Confectionery Packaging Suppliers Czechia 2026 - Grocery Trade News",
+          "region": "국제",
+          "date": "2026-11-16",
+          "reason": "FCM subject not matched"
+        }
+      ]
     },
     "source": "Official direct HTML crawl + Google News RSS",
     "successfulQueries": 44,
@@ -47,7 +67,7 @@
     "regionStats": {
       "미국": {
         "queries": 5,
-        "returned": 7,
+        "returned": 8,
         "accepted": 6,
         "errors": []
       },
@@ -93,7 +113,7 @@
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 5,
-        "returned": 7,
+        "returned": 8,
         "errors": []
       },
       "EU": {
@@ -168,9 +188,9 @@
         "region": "한국",
         "name": "국가기술표준원 고시·공고",
         "url": "https://www.kats.go.kr/content.do?cmsid=239",
-        "checked": false,
+        "checked": true,
         "accepted": 0,
-        "error": "The operation was aborted due to timeout"
+        "error": null
       },
       {
         "region": "중국",
