@@ -11,7 +11,9 @@
       "category": "EMC·무선",
       "date": "2026-11-17",
       "url": "https://www.federalregister.gov/documents/2026/11/17/2026-23400/protecting-consumers-from-sim-swap-and-port-out-fraud",
-      "source": "Federal Register / FCC"
+      "source": "Federal Register / FCC",
+      "titleKo": "미국 FCC, SIM 교체 및 번호이동 사기 방지 규정 시행 절차 발표",
+      "summaryKo": "미국 연방통신위원회(FCC)는 SIM 교체 및 번호이동 사기 방지 명령(FCC 23-95)에 따른 정보 수집 요건을 미국 관리예산처(OMB)가 3년간 승인했다고 발표했습니다. 관련 개정 규정은 OMB 심사 완료 후 별도 공지를 통해 준수 기한을 알리도록 되어 있습니다. 통신 서비스 이용자 보호 규정으로, 전기제품 안전인증 변경과는 직접 관련이 없습니다."
     },
     {
       "id": "a1098cf2e02883db",
@@ -21,7 +23,9 @@
       "category": "EMC·무선",
       "date": "2026-11-12",
       "url": "https://www.federalregister.gov/documents/2026/11/12/2026-23041/television-broadcasting-services-st-george-utah",
-      "source": "Federal Register / FCC"
+      "source": "Federal Register / FCC",
+      "titleKo": "미국 FCC, 유타주 세인트조지 TV 방송 채널 배정 변경",
+      "summaryKo": "미국 연방통신위원회(FCC)는 유타주 세인트조지의 TV 방송 채널 배정표를 변경해 기존 UHF 채널 21을 VHF 채널 9로 대체했습니다. 방송국 면허 사업자의 신청에 따른 주파수 배정 조정으로, 전기제품 안전인증이나 EMC 인증 요건 변경과는 직접 관련이 없습니다."
     }
   ]
 }
