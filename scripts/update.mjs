@@ -15,13 +15,13 @@ const previous=n=>new Date(monday.getTime()-n*86400000).toISOString().slice(0,10
 const start=arg("--start")||previous(7),end=arg("--end")||previous(1);
 if(!dateOK(start)||!dateOK(end)||start>end)throw Error("Invalid period");
 const fcmSources=[
- {region:"미국",category:"FDA 식품접촉",q:"site:fda.gov food contact substances regulation amendment notification"},
- {region:"EU",category:"EU FCM",q:"site:eur-lex.europa.eu food contact materials plastics regulation amendment 10/2011"},
- {region:"EU",category:"EFSA FCM",q:"site:efsa.europa.eu food contact materials scientific opinion regulation"},
- {region:"한국",category:"식품용 기구·용기·포장",q:"식약처 기구 및 용기 포장 기준 규격 개정 고시"},
- {region:"중국",category:"GB 4806",q:"食品接触材料 GB 4806 标准 修订 发布 实施"},
- {region:"일본",category:"식품용 기구·용기·포장",q:"食品用器具 容器包装 ポジティブリスト 改正 施行"},
- {region:"국제",category:"FCM 국제",q:"food contact materials regulation amendment migration limits"}
+ {region:"미국",category:"FDA 식품접촉",q:""food contact" FDA regulation amendment"},
+ {region:"EU",category:"EU FCM",q:""food contact materials" EU regulation amendment"},
+ {region:"EU",category:"EFSA FCM",q:"EFSA "food contact" plastics migration"},
+ {region:"한국",category:"식품용 기구·용기·포장",q:""기구 및 용기·포장" 개정"},
+ {region:"중국",category:"GB 4806",q:"食品接触材料 标准 修订"},
+ {region:"일본",category:"식품용 기구·용기·포장",q:"食品用器具 容器包装 改正"},
+ {region:"국제",category:"FCM 국제",q:""food contact" regulation migration limit"}
 ];
 const sources=[
  {region:"미국",category:"UL",q:'"UL Solutions" electrical safety certification OR "UL standard" appliance'},
@@ -79,16 +79,18 @@ const fallbackQueries={
 const relevant=/電気用品|技術基準|改正|施行|强制性|认证|认监委|电器|安全标准|修订|实施规则|\bUL\b|\bCE\b|\bEMC\b|\bErP\b|\bRoHS\b|\bKC\b|\bCCC\b|\bCNCA\b|\bPSE\b|\bIEC\b|\bISO\b|\bIECEE\b|\bBIS\b|\bSNI\b|\bCR mark\b|\bICC\b|\bPS mark\b|electrical safety|product safety|conformity|certification|ecodesign|전기안전|안전인증|전기용품|안전기준/i;
 const direct=await crawlOfficial(start,end);
 const results=[...direct.items];
-const fcmResults=[];const failures=[];let success=0;
+const fcmResults=[];const fcmStats={queries:0,returned:0,candidates:0,accepted:0,errors:[]};const failures=[];let success=0;
 for(const entry of direct.items){regionStats[entry.region].accepted++}
 for(const source of [...fcmSources.map(x=>({...x,fcm:true})),...officialSources.map(x=>({...x,officialSearch:true,q:"site:"+x.domain+" "+x.q})),...sources]){
  try{
   const query=source.q+" after:"+start+" before:"+nextDay;
   const locale=source.region==="일본"?"hl=ja&gl=JP&ceid=JP:ja":source.region==="한국"?"hl=ko&gl=KR&ceid=KR:ko":source.region==="중국"?"hl=zh-CN&gl=CN&ceid=CN:zh-Hans":"hl=en-US&gl=US&ceid=US:en";
   const url="https://news.google.com/rss/search?q="+encodeURIComponent(query)+"&"+locale;
+  if(source.fcm)await new Promise(resolve=>setTimeout(resolve,1200));
   const feed=await parser.parseURL(url);
   if(!Array.isArray(feed.items))throw Error("Invalid feed");
   success++;
+  if(source.fcm){fcmStats.queries++;fcmStats.returned+=feed.items.length}
   regionStats[source.region].queries++;
   regionStats[source.region].returned+=feed.items.length;
   for(const entry of feed.items){
@@ -102,10 +104,11 @@ for(const source of [...fcmSources.map(x=>({...x,fcm:true})),...officialSources.
    if(!/^https:\/\//.test(link))continue;
    const snippet=String(entry.contentSnippet||entry.content||"").replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();
    const id=crypto.createHash("sha256").update(title.toLowerCase()).digest("hex").slice(0,16);
+   if(source.fcm)fcmStats.candidates++;
    (source.fcm?fcmResults:results).push({id,title,summary:snippet.slice(0,850)||title,region:source.region,category:source.category,date:day,url:link,source:entry.creator||entry.source?.title||"Google News RSS",sourceType:source.officialSearch?"official-site-search":"news-search",verification:"검색 결과 — 공식 원문 확인 필요"});
    regionStats[source.region].accepted++;
   }
- }catch(e){failures.push(source.region+"/"+source.category+": "+e.message);regionStats[source.region].errors.push(source.category+": "+e.message);console.error("Feed failure:",source.category,e.message)}
+ }catch(e){if(source.fcm)fcmStats.errors.push(source.category+": "+e.message);failures.push(source.region+"/"+source.category+": "+e.message);regionStats[source.region].errors.push(source.category+": "+e.message);console.error("Feed failure:",source.category,e.message)}
 }
 if(success===0&&!direct.status.some(s=>s.checked))throw Error("All sources failed. Existing issue preserved.");
 // Retry regions with no accepted items using broader search terms, retaining the issue date window.
@@ -133,9 +136,10 @@ for(const [region,query] of Object.entries(fallbackQueries)){
  }catch(e){regionStats[region].errors.push("fallback: "+e.message);failures.push(region+"/fallback: "+e.message)}
 }
 
-const fcmStandard=/food.contact|FCM|migration limit|食品接触|食品用器具|容器包装|기구.{0,4}용기.{0,4}포장|식품접촉|식품용 기구|GB\s*4806|EU\s*10\/2011|positive list|ポジティブリスト/i;
+const fcmStandard=/food.contact|FCM|migration limit|食品接触|食品用器具|容器包装|기구.{0,6}용기.{0,6}포장|식품접촉|식품용 기구|GB\s*4806|EU\s*10\/2011|positive list|ポジティブリスト|식약처|식품의약품안전처/i;
 const fcmChange=/amend|revis|regulat|new standard|updated|effective|restriction|limit|notification|개정|고시|시행|변경|修订|发布|实施|改正|施行|規格|基準/i;
-const fcmItems=[...new Map(fcmResults.filter(i=>fcmStandard.test(i.title)&&fcmChange.test(i.title)).map(i=>[i.id,i])).values()].sort((a,b)=>b.date.localeCompare(a.date));
+const fcmItems=[...new Map(fcmResults.filter(i=>fcmStandard.test(i.title+" "+i.summary)&&fcmChange.test(i.title+" "+i.summary)).map(i=>[i.id,i])).values()].sort((a,b)=>b.date.localeCompare(a.date));
+fcmStats.accepted=fcmItems.length;
 const rank=t=>t==="official-direct"?3:t==="official-site-search"?2:1;
 const items=[...new Map(results.filter(isRegulatoryChange).sort((a,b)=>rank(a.sourceType)-rank(b.sourceType)).map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
 // An empty weekly issue is valid when source checks succeed.
@@ -157,7 +161,7 @@ const regionStatus=Object.fromEntries(coveredRegions.map(region=>{
  const stats=regionStats[region];
  return [region,{count,status:count>0?"수집됨":stats.errors.length>=stats.queries&&stats.queries>0?"수집 오류":"해당 기간 검색 결과 없음 또는 확인 불가",queries:stats.queries,returned:stats.returned,errors:stats.errors}];
 }));
-const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,fcmItems,collection:{source:"Official direct HTML crawl + Google News RSS",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,filteredOut:results.length-items.length,failures}};
+const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,fcmItems,collection:{fcmStats,source:"Official direct HTML crawl + Google News RSS",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,filteredOut:results.length-items.length,failures}};
 await fs.mkdir("data/archive",{recursive:true});
 await fs.writeFile("data/archive/"+issueDate+".json",JSON.stringify(output,null,2)+"\n");
 await fs.writeFile("data/latest.json",JSON.stringify(output,null,2)+"\n");
