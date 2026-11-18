@@ -13,6 +13,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/weekly.yml'
+      - 'scripts/**'
 permissions:
   contents: write
 concurrency:
@@ -34,7 +35,7 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           INITIAL_ISSUE: ${{ inputs.initial_issue }}
         run: |
-          if [ "$EVENT_NAME" = "push" ] || [ "$INITIAL_ISSUE" = "true" ]; then
+          if [ "$INITIAL_ISSUE" = "true" ]; then
             node scripts/update.mjs --start 2026-11-10 --end 2026-11-15 --issue-date 2026-11-16
           else
             node scripts/update.mjs
