@@ -15,7 +15,7 @@ const agencies=[
  {slug:"federal-communications-commission",region:"미국",category:"EMC·무선",name:"Federal Register / FCC"},
  {slug:"energy-department",region:"미국",category:"에너지효율",name:"Federal Register / DOE"}
 ];
-const keywords=/equipment authorization|radio frequency|electromagnetic|unlicensed device|electronic device|consumer product|energy conservation|energy efficiency|appliance|refrigerator|dishwasher|air conditioner|water heater|test procedure|certification|battery|television receiver|microwave oven|consumer electronics|energy star|external power supply|charger/i;
+const keywords=/equipment authorization|radio frequency|electromagnetic|unlicensed device|electronic device|consumer product|energy conservation|energy efficiency|appliance|refrigerator|dishwasher|air conditioner|water heater|test procedure|certification|battery|television receiver|microwave oven|consumer electronics|energy star|external power supply|charger|wireless|radiation|spectrum|electrical|product safety|power consumption|compliance|labeling|consumer/i;
 let items=[];let successes=0;
 for(const agency of agencies){
  try{
@@ -50,6 +50,7 @@ for(const agency of agencies){
 }
 if(successes!==agencies.length)throw Error("Source collection incomplete; previous issue preserved");
 items=[...new Map(items.map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
+if(items.length===0)throw Error("Zero matching publications: refusing to overwrite published issue. Check agency filters and date range.");
 const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:startDate,periodEnd:endDate,items};
 await fs.mkdir("data/archive",{recursive:true});
 await fs.writeFile("data/archive/"+issueDate+".json",JSON.stringify(output,null,2)+"\n");
