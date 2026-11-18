@@ -27,7 +27,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Collect official regulatory publications
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Collect global certification news
         env:
           EVENT_NAME: ${{ github.event_name }}
           INITIAL_ISSUE: ${{ inputs.initial_issue }}
