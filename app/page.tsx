@@ -1,0 +1,1 @@
+import Dashboard from "./dashboard";import latest from "../data/latest.json";export default function Page(){return <Dashboard data={latest}/>}
