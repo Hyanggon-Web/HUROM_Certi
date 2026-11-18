@@ -1,3 +1,4 @@
+import {isRegulatoryChange} from "./regulatory-filter.mjs";
 import {crawlOfficial} from "./crawl-official.mjs";
 import fs from "node:fs/promises";
 import crypto from "node:crypto";
@@ -20,11 +21,11 @@ const sources=[
  {region:"EU",category:"EMC",q:'"EMC Directive" electromagnetic compatibility compliance'},
  {region:"EU",category:"ErP",q:'"Ecodesign" "energy-related products" EU regulation'},
  {region:"EU",category:"RoHS",q:'"RoHS Directive" electrical electronic equipment'},
- {region:"한국",category:"KC",q:'"KC 인증" "전기용품" 안전기준'},
- {region:"한국",category:"KC",q:'"국가기술표준원" "전기용품" 안전인증'},
+ {region:"한국",category:"KC",q:'전기용품 안전기준 개정 고시 시행 KC'},
+ {region:"한국",category:"KC",q:'국가기술표준원 전기용품 안전관리 개정 공고'},
  {region:"중국",category:"CCC",q:'CCC 强制性产品认证 电器 安全标准 修订 公告'},
  {region:"중국",category:"CNCA",q:'国家认监委 CNCA 强制性认证 实施规则 更新'},
- {region:"일본",category:"PSE",q:'"PSE" "DENAN" electrical appliances Japan'},
+ {region:"일본",category:"PSE",q:'電気用品安全法 PSE 技術基準 改正 施行'},
  {region:"국제",category:"IEC",q:'"IEC 60335" OR "IEC electrical safety standard"'},
  {region:"국제",category:"ISO",q:'"ISO standard" electrical appliance product safety'},
  {region:"국제",category:"IECEE",q:'"IECEE CB Scheme" electrical certification'},
@@ -66,14 +67,14 @@ const fallbackQueries={
  "국제":'"IEC standard" OR "IECEE" OR "ISO standard" electrical',
  "기타":'"BIS certification" OR "SNI certification" OR "electrical safety certification"'
 };
-const relevant=/强制性|认证|认监委|电器|安全标准|修订|实施规则|\bUL\b|\bCE\b|\bEMC\b|\bErP\b|\bRoHS\b|\bKC\b|\bCCC\b|\bCNCA\b|\bPSE\b|\bIEC\b|\bISO\b|\bIECEE\b|\bBIS\b|\bSNI\b|\bCR mark\b|\bICC\b|\bPS mark\b|electrical safety|product safety|conformity|certification|ecodesign|전기안전|안전인증|전기용품|안전기준/i;
+const relevant=/電気用品|技術基準|改正|施行|强制性|认证|认监委|电器|安全标准|修订|实施规则|\bUL\b|\bCE\b|\bEMC\b|\bErP\b|\bRoHS\b|\bKC\b|\bCCC\b|\bCNCA\b|\bPSE\b|\bIEC\b|\bISO\b|\bIECEE\b|\bBIS\b|\bSNI\b|\bCR mark\b|\bICC\b|\bPS mark\b|electrical safety|product safety|conformity|certification|ecodesign|전기안전|안전인증|전기용품|안전기준/i;
 const direct=await crawlOfficial(start,end);
 const results=[...direct.items];const failures=[];let success=0;
 for(const entry of direct.items){regionStats[entry.region].accepted++}
 for(const source of [...officialSources.map(x=>({...x,officialSearch:true,q:"site:"+x.domain+" "+x.q})),...sources]){
  try{
   const query=source.q+" after:"+start+" before:"+nextDay;
-  const locale=source.region==="한국"?"hl=ko&gl=KR&ceid=KR:ko":source.region==="중국"?"hl=zh-CN&gl=CN&ceid=CN:zh-Hans":"hl=en-US&gl=US&ceid=US:en";
+  const locale=source.region==="일본"?"hl=ja&gl=JP&ceid=JP:ja":source.region==="한국"?"hl=ko&gl=KR&ceid=KR:ko":source.region==="중국"?"hl=zh-CN&gl=CN&ceid=CN:zh-Hans":"hl=en-US&gl=US&ceid=US:en";
   const url="https://news.google.com/rss/search?q="+encodeURIComponent(query)+"&"+locale;
   const feed=await parser.parseURL(url);
   if(!Array.isArray(feed.items))throw Error("Invalid feed");
@@ -101,7 +102,7 @@ if(success===0&&!direct.status.some(s=>s.checked))throw Error("All sources faile
 for(const [region,query] of Object.entries(fallbackQueries)){
  if(regionStats[region].accepted>0)continue;
  try{
-  const locale=region==="한국"?"hl=ko&gl=KR&ceid=KR:ko":region==="중국"?"hl=zh-CN&gl=CN&ceid=CN:zh-Hans":"hl=en-US&gl=US&ceid=US:en";
+  const locale=region==="일본"?"hl=ja&gl=JP&ceid=JP:ja":region==="한국"?"hl=ko&gl=KR&ceid=KR:ko":region==="중국"?"hl=zh-CN&gl=CN&ceid=CN:zh-Hans":"hl=en-US&gl=US&ceid=US:en";
   const url="https://news.google.com/rss/search?q="+encodeURIComponent(query+" after:"+start+" before:"+nextDay)+"&"+locale;
   const feed=await parser.parseURL(url);
   if(!Array.isArray(feed.items))throw Error("Invalid fallback feed");
@@ -123,7 +124,7 @@ for(const [region,query] of Object.entries(fallbackQueries)){
 }
 
 const rank=t=>t==="official-direct"?3:t==="official-site-search"?2:1;
-const items=[...new Map(results.sort((a,b)=>rank(a.sourceType)-rank(b.sourceType)).map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
+const items=[...new Map(results.filter(isRegulatoryChange).sort((a,b)=>rank(a.sourceType)-rank(b.sourceType)).map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
 // An empty weekly issue is valid when source checks succeed.
 async function translate(value){
  if(!value||/[가-힣]/.test(value))return value;
@@ -143,7 +144,7 @@ const regionStatus=Object.fromEntries(coveredRegions.map(region=>{
  const stats=regionStats[region];
  return [region,{count,status:count>0?"수집됨":stats.errors.length>=stats.queries&&stats.queries>0?"수집 오류":"해당 기간 검색 결과 없음 또는 확인 불가",queries:stats.queries,returned:stats.returned,errors:stats.errors}];
 }));
-const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,collection:{source:"Official direct HTML crawl + Google News RSS",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,failures}};
+const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,collection:{source:"Official direct HTML crawl + Google News RSS",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,filteredOut:results.length-items.length,failures}};
 await fs.mkdir("data/archive",{recursive:true});
 await fs.writeFile("data/archive/"+issueDate+".json",JSON.stringify(output,null,2)+"\n");
 await fs.writeFile("data/latest.json",JSON.stringify(output,null,2)+"\n");
