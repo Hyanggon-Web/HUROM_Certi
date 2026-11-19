@@ -54,8 +54,10 @@ const sources=[
  {region:"EU",category:"EMC",q:'"EMC Directive" electromagnetic compatibility compliance'},
  {region:"EU",category:"ErP",q:'"Ecodesign" "energy-related products" EU regulation'},
  {region:"EU",category:"RoHS",q:'"RoHS Directive" electrical electronic equipment'},
- {region:"한국",category:"KC",q:'전기용품 안전기준 개정 고시 시행 KC'},
- {region:"한국",category:"KC",q:'국가기술표준원 전기용품 안전관리 개정 공고'},
+ {region:"한국",category:"KC",q:'국가기술표준원 전기용품'},
+ {region:"한국",category:"KC",q:'국가기술표준원 전기 용품'},
+ {region:"한국",category:"KC",q:'기술표준원 전기용품'},
+ {region:"한국",category:"KC",q:'기술표준원 전기 용품'},
  {region:"중국",category:"CCC",q:'CCC 强制性产品认证 电器 安全标准 修订 公告'},
  {region:"중국",category:"CNCA",q:'国家认监委 CNCA 强制性认证 实施规则 更新'},
  {region:"일본",category:"PSE",q:'電気用品安全法 PSE 技術基準 改正 施行'},
@@ -117,7 +119,7 @@ for(const source of [...fcmSources.map(x=>({...x,fcm:true})),...officialSources.
   regionStats[source.region].returned+=feed.items.length;
   for(const entry of feed.items){
    const title=String(entry.title||"").trim();
-   if(!source.fcm&&!relevant.test(title)&&!source.officialSearch)continue;
+   if(!source.fcm&&!relevant.test(title)&&!source.officialSearch&&!(source.region==="한국"&&source.category==="KC"))continue;
    const rawDate=entry.isoDate||entry.pubDate;
    if(!rawDate||Number.isNaN(Date.parse(rawDate)))continue;
    const day=new Date(rawDate).toISOString().slice(0,10);
@@ -143,7 +145,7 @@ for(const [region,query] of Object.entries(fallbackQueries)){
   for(const entry of feed.items){
    const title=String(entry.title||"").trim();
    const rawDate=entry.isoDate||entry.pubDate;
-   if(!relevant.test(title)||!rawDate||Number.isNaN(Date.parse(rawDate)))continue;
+   if((region!=="한국"&&!relevant.test(title))||!rawDate||Number.isNaN(Date.parse(rawDate)))continue;
    const day=new Date(rawDate).toISOString().slice(0,10);
    if(day<start||day>end)continue;
    const link=String(entry.link||"");
@@ -180,7 +182,18 @@ fcmStats.rejected=fcmResults.filter(i=>fcmRejectReason(i)).map(i=>({title:i.titl
 console.log("FCM diagnostic",JSON.stringify(fcmStats));
 fcmStats.accepted=fcmItems.length;
 const rank=t=>t==="official-direct"?3:t==="official-site-search"?2:1;
-const items=[...new Map(results.filter(isRegulatoryChange).sort((a,b)=>rank(a.sourceType)-rank(b.sourceType)).map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
+// Korean KC requires agency + electrical appliances + regulation-change signals in title or summary.
+const kcAgency=/국가기술표준원|기술표준원/i;
+const kcProduct=/전기\s*용품/i;
+const kcChange=/개정|제정|폐지|고시|공고|시행|변경|행정예고|입법예고/i;
+function certificationAccepted(item){
+ if(item.region==="한국"&&item.category==="KC"){
+  const content=String(item.title||"")+" "+String(item.summary||"");
+  return kcAgency.test(content)&&kcProduct.test(content)&&kcChange.test(content);
+ }
+ return isRegulatoryChange(item);
+}
+const items=[...new Map(results.filter(certificationAccepted).sort((a,b)=>rank(a.sourceType)-rank(b.sourceType)).map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
 // An empty weekly issue is valid when source checks succeed.
 async function translate(value){
  if(!value||/[가-힣]/.test(value))return value;
