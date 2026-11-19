@@ -158,8 +158,25 @@ for(const [region,query] of Object.entries(fallbackQueries)){
 
 const fcmStandard=/food.contact|FCM|migration limit|食品接触|食品用器具|容器包装|기구.{0,6}용기.{0,6}포장|식품접촉|식품용 기구|GB\s*4806|EU\s*10\/2011|positive list|ポジティブリスト|식약처|식품의약품안전처/i;
 const fcmChange=/amend|revis|regulat|new standard|updated|effective|restriction|limit|notification|개정|고시|시행|변경|修订|发布|实施|改正|施行|規格|基準/i;
-const fcmItems=[...new Map(fcmResults.filter(i=>fcmStandard.test(i.title+" "+i.summary)&&fcmChange.test(i.title+" "+i.summary)).map(i=>[i.id,i])).values()].sort((a,b)=>b.date.localeCompare(a.date));
-fcmStats.rejected=fcmResults.filter(i=>!fcmStandard.test(i.title+" "+i.summary)||!fcmChange.test(i.title+" "+i.summary)).map(i=>({title:i.title,region:i.region,date:i.date,reason:!fcmStandard.test(i.title+" "+i.summary)?"FCM subject not matched":"Regulatory change not matched"}));
+// Korean FCM articles must pass all three stages; other regions keep the existing filter.
+const koreanFCMOrg=/식약처|식품의약품안전처|\bMFDS\b/i;
+const koreanFCMFood=/식품/i;
+const koreanFCMPackaging=/용기|포장/i;
+const koreanFCMChange=/제정|개정|시행|행정예고|입법예고|고시|기준.{0,8}(변경|개정)|규격.{0,8}(변경|개정)/i;
+function fcmRejectReason(item){
+ const content=item.title+" "+item.summary;
+ if(item.region==="한국"){
+  if(!koreanFCMOrg.test(content))return "한국 1단계: 식약처/식품의약품안전처/MFDS 불일치";
+  if(!koreanFCMFood.test(content)||!koreanFCMPackaging.test(content))return "한국 2단계: 식품 및 용기/포장 조건 불일치";
+  if(!koreanFCMChange.test(content))return "한국 3단계: 법령·규격 변경 조건 불일치";
+  return null;
+ }
+ if(!fcmStandard.test(content))return "FCM subject not matched";
+ if(!fcmChange.test(content))return "Regulatory change not matched";
+ return null;
+}
+const fcmItems=[...new Map(fcmResults.filter(i=>!fcmRejectReason(i)).map(i=>[i.id,i])).values()].sort((a,b)=>b.date.localeCompare(a.date));
+fcmStats.rejected=fcmResults.filter(i=>fcmRejectReason(i)).map(i=>({title:i.title,region:i.region,date:i.date,reason:fcmRejectReason(i)}));
 console.log("FCM diagnostic",JSON.stringify(fcmStats));
 fcmStats.accepted=fcmItems.length;
 const rank=t=>t==="official-direct"?3:t==="official-site-search"?2:1;
