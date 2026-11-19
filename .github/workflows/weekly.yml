@@ -34,6 +34,8 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
           INITIAL_ISSUE: ${{ inputs.initial_issue }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
         run: |
           if [ "$EVENT_NAME" = "push" ] || [ "$INITIAL_ISSUE" = "true" ]; then
             node scripts/update.mjs --start 2026-11-10 --end 2026-11-16 --issue-date 2026-11-17
