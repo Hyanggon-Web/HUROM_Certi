@@ -18,7 +18,10 @@ const fcmSources=[
  {region:"미국",category:"FDA 식품접촉",q:'"food contact" FDA regulation amendment'},
  {region:"EU",category:"EU FCM",q:'"food contact materials" EU regulation amendment'},
  {region:"EU",category:"EFSA FCM",q:'EFSA "food contact" plastics migration'},
- {region:"한국",category:"식품용 기구·용기·포장",q:'"기구 및 용기·포장" 개정'},
+  {region:"한국",category:"식품용 기구·용기·포장",q:'기구 및 용기 포장 기준 규격 개정'},
+ {region:"한국",category:"식품용 기구·용기·포장",q:'식품접촉재료 안전기준'},
+ {region:"한국",category:"식품용 기구·용기·포장",q:'식품용 기구 용기 포장 고시'},
+ {region:"한국",category:"식품용 기구·용기·포장",q:'식약처 용출규격 개정'},
  {region:"중국",category:"GB 4806",q:'食品接触材料 标准 修订'},
  {region:"일본",category:"식품용 기구·용기·포장",q:'食品用器具 容器包装 改正'},
  {region:"국제",category:"FCM 국제",q:'"food contact" regulation migration limit'}
