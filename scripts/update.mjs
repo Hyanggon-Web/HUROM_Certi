@@ -4,6 +4,27 @@ import fs from "node:fs/promises";
 import crypto from "node:crypto";
 import Parser from "rss-parser";
 const parser=new Parser({timeout:18000,headers:{"User-Agent":"Mozilla/5.0 WeeklyCERTI/2.0"}});
+// Korean news searches use NAVER API HUB; all other regions retain Google News RSS.
+const naverId=process.env.NAVER_CLIENT_ID;
+const naverSecret=process.env.NAVER_CLIENT_SECRET;
+async function searchNaverNews(query){
+ if(!naverId||!naverSecret)throw Error("NAVER API HUB credentials missing");
+ const url=new URL("https://naverapihub.apigw.ntruss.com/search/v1/news");
+ for(const [key,value] of Object.entries({query,display:"100",start:"1",sort:"date"}))url.searchParams.set(key,value);
+ const response=await fetch(url,{headers:{"X-NCP-APIGW-API-KEY-ID":naverId,"X-NCP-APIGW-API-KEY":naverSecret},signal:AbortSignal.timeout(18000)});
+ if(!response.ok)throw Error("NAVER API HUB HTTP "+response.status);
+ const data=await response.json();
+ if(!Array.isArray(data.items))throw Error("Invalid NAVER news response");
+ const strip=s=>String(s||"").replace(/<[^>]+>/g," ").replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/\s+/g," ").trim();
+ return {items:data.items.map(item=>({title:strip(item.title),isoDate:item.pubDate,link:item.originallink||item.link,contentSnippet:strip(item.description),source:{title:"NAVER 뉴스 검색"}}))};
+}
+async function searchNews(source,query){
+ if(source.region==="한국")return searchNaverNews(source.q);
+ const locale=source.region==="일본"?"hl=ja&gl=JP&ceid=JP:ja":source.region==="중국"?"hl=zh-CN&gl=CN&ceid=CN:zh-Hans":"hl=en-US&gl=US&ceid=US:en";
+ const url="https://news.google.com/rss/search?q="+encodeURIComponent(query)+"&"+locale;
+ return parser.parseURL(url);
+}
+
 const args=process.argv.slice(2);
 const arg=name=>{const i=args.indexOf(name);return i<0?null:args[i+1]};
 const dateOK=s=>/^\d{4}-\d{2}-\d{2}$/.test(s||"")&&!Number.isNaN(Date.parse(s+"T00:00:00Z"));
@@ -87,10 +108,8 @@ for(const entry of direct.items){regionStats[entry.region].accepted++}
 for(const source of [...fcmSources.map(x=>({...x,fcm:true})),...officialSources.map(x=>({...x,officialSearch:true,q:"site:"+x.domain+" "+x.q})),...sources]){
  try{
   const query=source.q+" after:"+start+" before:"+nextDay;
-  const locale=source.region==="일본"?"hl=ja&gl=JP&ceid=JP:ja":source.region==="한국"?"hl=ko&gl=KR&ceid=KR:ko":source.region==="중국"?"hl=zh-CN&gl=CN&ceid=CN:zh-Hans":"hl=en-US&gl=US&ceid=US:en";
-  const url="https://news.google.com/rss/search?q="+encodeURIComponent(query)+"&"+locale;
-  if(source.fcm)await new Promise(resolve=>setTimeout(resolve,1200));
-  const feed=await parser.parseURL(url);
+  if(source.fcm&&source.region!=="한국")await new Promise(resolve=>setTimeout(resolve,1200));
+  const feed=await searchNews(source,query);
   if(!Array.isArray(feed.items))throw Error("Invalid feed");
   success++;
   if(source.fcm){fcmStats.queries++;fcmStats.returned+=feed.items.length}
@@ -108,7 +127,7 @@ for(const source of [...fcmSources.map(x=>({...x,fcm:true})),...officialSources.
    const snippet=String(entry.contentSnippet||entry.content||"").replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();
    const id=crypto.createHash("sha256").update(title.toLowerCase()).digest("hex").slice(0,16);
    if(source.fcm)fcmStats.candidates++;
-   (source.fcm?fcmResults:results).push({id,title,summary:snippet.slice(0,850)||title,region:source.region,category:source.category,date:day,url:link,source:entry.creator||entry.source?.title||"Google News RSS",sourceType:source.officialSearch?"official-site-search":"news-search",verification:"검색 결과 — 공식 원문 확인 필요"});
+   (source.fcm?fcmResults:results).push({id,title,summary:snippet.slice(0,850)||title,region:source.region,category:source.category,date:day,url:link,source:entry.creator||entry.source?.title||"Google News RSS",sourceType:source.officialSearch?"official-site-search":source.region==="한국"?"naver-news-search":"news-search",verification:"검색 결과 — 공식 원문 확인 필요"});
    regionStats[source.region].accepted++;
   }
  }catch(e){if(source.fcm)fcmStats.errors.push(source.category+": "+e.message);failures.push(source.region+"/"+source.category+": "+e.message);regionStats[source.region].errors.push(source.category+": "+e.message);console.error("Feed failure:",source.category,e.message)}
@@ -118,9 +137,7 @@ if(success===0&&!direct.status.some(s=>s.checked))throw Error("All sources faile
 for(const [region,query] of Object.entries(fallbackQueries)){
  if(regionStats[region].accepted>0)continue;
  try{
-  const locale=region==="일본"?"hl=ja&gl=JP&ceid=JP:ja":region==="한국"?"hl=ko&gl=KR&ceid=KR:ko":region==="중국"?"hl=zh-CN&gl=CN&ceid=CN:zh-Hans":"hl=en-US&gl=US&ceid=US:en";
-  const url="https://news.google.com/rss/search?q="+encodeURIComponent(query+" after:"+start+" before:"+nextDay)+"&"+locale;
-  const feed=await parser.parseURL(url);
+  const feed=await searchNews({region,q:query},query+" after:"+start+" before:"+nextDay);
   if(!Array.isArray(feed.items))throw Error("Invalid fallback feed");
   regionStats[region].queries++;regionStats[region].returned+=feed.items.length;
   for(const entry of feed.items){
@@ -133,7 +150,7 @@ for(const [region,query] of Object.entries(fallbackQueries)){
    if(!/^https:\/\//.test(link))continue;
    const snippet=String(entry.contentSnippet||entry.content||"").replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();
    const id=crypto.createHash("sha256").update(title.toLowerCase()).digest("hex").slice(0,16);
-   results.push({id,title,summary:snippet.slice(0,850)||title,region,category:region==="미국"?"UL":region==="한국"?"KC":region==="중국"?"CCC·CNCA":region==="일본"?"PSE":region==="국제"?"IEC·ISO·IECEE":region==="EU"?"CE·EMC·ErP·RoHS":"전기안전 인증",date:day,url:link,source:entry.creator||entry.source?.title||"Google News RSS",sourceType:"news-search"});
+   results.push({id,title,summary:snippet.slice(0,850)||title,region,category:region==="미국"?"UL":region==="한국"?"KC":region==="중국"?"CCC·CNCA":region==="일본"?"PSE":region==="국제"?"IEC·ISO·IECEE":region==="EU"?"CE·EMC·ErP·RoHS":"전기안전 인증",date:day,url:link,source:entry.creator||entry.source?.title||"Google News RSS",sourceType:region==="한국"?"naver-news-search":"news-search"});
    regionStats[region].accepted++;
   }
  }catch(e){regionStats[region].errors.push("fallback: "+e.message);failures.push(region+"/fallback: "+e.message)}
@@ -166,7 +183,7 @@ const regionStatus=Object.fromEntries(coveredRegions.map(region=>{
  const stats=regionStats[region];
  return [region,{count,status:count>0?"수집됨":stats.errors.length>=stats.queries&&stats.queries>0?"수집 오류":"해당 기간 검색 결과 없음 또는 확인 불가",queries:stats.queries,returned:stats.returned,errors:stats.errors}];
 }));
-const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,fcmItems,collection:{fcmStats,source:"Official direct HTML crawl + Google News RSS",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,filteredOut:results.length-items.length,failures}};
+const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,fcmItems,collection:{fcmStats,source:"Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,filteredOut:results.length-items.length,failures}};
 await fs.mkdir("data/archive",{recursive:true});
 await fs.writeFile("data/archive/"+issueDate+".json",JSON.stringify(output,null,2)+"\n");
 await fs.writeFile("data/latest.json",JSON.stringify(output,null,2)+"\n");
