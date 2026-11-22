@@ -1,0 +1,319 @@
+{
+  "generatedAt": "2026-11-22T23:00:00.000Z",
+  "periodStart": "2026-11-16",
+  "periodEnd": "2026-11-22",
+  "items": [],
+  "fcmItems": [
+    {
+      "id": "47de14bc82621efc",
+      "title": "US food-contact PCR shortage highlights limits of recycled plastics supply - Packaging Insights",
+      "summary": "US food-contact PCR shortage highlights limits of recycled plastics supply Packaging Insights",
+      "region": "국제",
+      "category": "FCM 국제",
+      "date": "2026-11-18",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNMFEwcnhNTlczbU1tQkpyRDRhdGVZd2gyb0dTaXBYSEFEMm9maGJjblBzMFdRcGd3dE5zTUdDN2MxLTJ1aElwUlpsejVXQ1pRcmJoMEk4ZGRYWTQ2WFptVW9XNFRmTm5ELW5wajR0TjJPTWR0d0lGc3NlMHJSYjZOUnhUc0lQbHEtbUJfYk9WNkxiVlE?oc=5",
+      "source": "Google News RSS",
+      "sourceType": "news-search",
+      "verification": "검색 결과 — 공식 원문 확인 필요",
+      "titleKo": "미국의 식품 접촉 PCR 부족으로 인해 재활용 플라스틱 공급의 한계가 드러났습니다 - Packaging Insights",
+      "summaryKo": "미국의 식품 접촉 PCR 부족으로 인해 재활용 플라스틱 공급의 한계가 드러났습니다. Packaging Insights"
+    }
+  ],
+  "collection": {
+    "fcmStats": {
+      "queries": 10,
+      "returned": 413,
+      "candidates": 13,
+      "accepted": 1,
+      "errors": [],
+      "rejected": [
+        {
+          "title": "FDA Proposes Requiring Mandatory Notifications for Self-GRAS Determinations - Food Safety Magazine",
+          "region": "미국",
+          "date": "2026-11-19",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "FDA Proposes Requiring Mandatory Notifications for Self-GRAS Determinations - Food Safety Magazine",
+          "region": "EU",
+          "date": "2026-11-19",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "EU Council Postpones Updated CLP Regulation Deadlines to 2028 - European Coatings",
+          "region": "EU",
+          "date": "2026-11-19",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "High-Stability Edible Coatings Market Size, Share & Forecast 2036 - Fact.MR",
+          "region": "EU",
+          "date": "2026-11-17",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "CIRS Group Korea Presented at the 2026 Alternative Food Industry Expert Training Program (Cell-Cultured Food) - CIRS Group",
+          "region": "EU",
+          "date": "2026-11-17",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "两部门联合印发《以标准提升引领轻工业优化升级实施方案》 - 信息化观察网",
+          "region": "중국",
+          "date": "2026-11-17",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "【事後レポート】製造業243社へのアンケート調査の公開と、明らかになった課題を解決する新サービス「スマートSDSコネクト」発表会｜Infoseekニュース - Infoseek",
+          "region": "일본",
+          "date": "2026-11-18",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "FDA Proposes Requiring Mandatory Notifications for Self-GRAS Determinations - Food Safety Magazine",
+          "region": "국제",
+          "date": "2026-11-19",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "Duplex Board Carton Market To 2035: E-Commerce Packaging Demand Supports Growth - News and Statistics - IndexBox",
+          "region": "국제",
+          "date": "2026-11-21",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "China Leading Disposable Bamboo Cutlery Supplier Bamboo Forever Meets LFGB Standards - Springfield News-Leader",
+          "region": "국제",
+          "date": "2026-11-19",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "Top 6 Plasticizer for PVC Soft Products Manufacturers in 2026: Formulation and Supply Needs - The Des Moines Register",
+          "region": "국제",
+          "date": "2026-11-17",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "Top 10 Dry Strength Agent Companies: A Ranked Comparison for Paper Mills - The Courier-Journal",
+          "region": "국제",
+          "date": "2026-11-20",
+          "reason": "FCM subject not matched"
+        }
+      ]
+    },
+    "source": "Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",
+    "successfulQueries": 49,
+    "totalQueries": 39,
+    "regionStats": {
+      "미국": {
+        "queries": 5,
+        "returned": 13,
+        "accepted": 10,
+        "errors": []
+      },
+      "EU": {
+        "queries": 8,
+        "returned": 9,
+        "accepted": 5,
+        "errors": []
+      },
+      "한국": {
+        "queries": 10,
+        "returned": 800,
+        "accepted": 12,
+        "errors": []
+      },
+      "중국": {
+        "queries": 5,
+        "returned": 1,
+        "accepted": 1,
+        "errors": []
+      },
+      "일본": {
+        "queries": 3,
+        "returned": 4,
+        "accepted": 3,
+        "errors": []
+      },
+      "국제": {
+        "queries": 7,
+        "returned": 8,
+        "accepted": 8,
+        "errors": []
+      },
+      "기타": {
+        "queries": 11,
+        "returned": 56,
+        "accepted": 35,
+        "errors": []
+      }
+    },
+    "regionStatus": {
+      "미국": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 5,
+        "returned": 13,
+        "errors": []
+      },
+      "EU": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 8,
+        "returned": 9,
+        "errors": []
+      },
+      "한국": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 10,
+        "returned": 800,
+        "errors": []
+      },
+      "중국": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 5,
+        "returned": 1,
+        "errors": []
+      },
+      "일본": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 3,
+        "returned": 4,
+        "errors": []
+      },
+      "국제": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 7,
+        "returned": 8,
+        "errors": []
+      },
+      "기타": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 11,
+        "returned": 56,
+        "errors": []
+      }
+    },
+    "officialCrawl": [
+      {
+        "region": "미국",
+        "name": "UL Standards & Engagement",
+        "url": "https://ulse.org/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "EU",
+        "name": "European Commission",
+        "url": "https://single-market-economy.ec.europa.eu/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "EU",
+        "name": "EUR-Lex",
+        "url": "https://eur-lex.europa.eu/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "한국",
+        "name": "국가기술표준원 고시·공고",
+        "url": "https://www.kats.go.kr/content.do?cmsid=239",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "중국",
+        "name": "CNCA",
+        "url": "https://www.cnca.gov.cn/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "중국",
+        "name": "SAMR",
+        "url": "https://www.samr.gov.cn/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "일본",
+        "name": "METI",
+        "url": "https://www.meti.go.jp/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "국제",
+        "name": "IEC",
+        "url": "https://www.iec.ch/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "국제",
+        "name": "ISO",
+        "url": "https://www.iso.org/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "국제",
+        "name": "IECEE",
+        "url": "https://www.iecee.org/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "기타",
+        "name": "BIS",
+        "url": "https://www.bis.gov.in/",
+        "checked": false,
+        "accepted": 0,
+        "error": "terminated"
+      },
+      {
+        "region": "기타",
+        "name": "BSN",
+        "url": "https://www.bsn.go.id/",
+        "checked": false,
+        "accepted": 0,
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "region": "기타",
+        "name": "MOST",
+        "url": "https://most.gov.vn/",
+        "checked": false,
+        "accepted": 0,
+        "error": "fetch failed"
+      },
+      {
+        "region": "기타",
+        "name": "DTI",
+        "url": "https://www.dti.gov.ph/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      }
+    ],
+    "filteredOut": 61,
+    "failures": []
+  }
+}
