@@ -22,8 +22,8 @@
   "collection": {
     "fcmStats": {
       "queries": 10,
-      "returned": 413,
-      "candidates": 13,
+      "returned": 415,
+      "candidates": 15,
       "accepted": 1,
       "errors": [],
       "rejected": [
@@ -58,10 +58,22 @@
           "reason": "FCM subject not matched"
         },
         {
+          "title": "《危险货物运输应急救援指南》国标修订工作组赴瑞欧科技调研走访 - 瑞欧科技",
+          "region": "중국",
+          "date": "2026-11-19",
+          "reason": "FCM subject not matched"
+        },
+        {
           "title": "两部门联合印发《以标准提升引领轻工业优化升级实施方案》 - 信息化观察网",
           "region": "중국",
           "date": "2026-11-17",
           "reason": "FCM subject not matched"
+        },
+        {
+          "title": "欧盟再生塑料食品接触新规 11 月 18 日生效！四类 DoC 符合性声明出口欧盟必看 - 全球定制网",
+          "region": "중국",
+          "date": "2026-11-17",
+          "reason": "Regulatory change not matched"
         },
         {
           "title": "【事後レポート】製造業243社へのアンケート調査の公開と、明らかになった課題を解決する新サービス「スマートSDSコネクト」発表会｜Infoseekニュース - Infoseek",
@@ -125,8 +137,8 @@
       },
       "중국": {
         "queries": 5,
-        "returned": 1,
-        "accepted": 1,
+        "returned": 3,
+        "accepted": 3,
         "errors": []
       },
       "일본": {
@@ -137,14 +149,14 @@
       },
       "국제": {
         "queries": 7,
-        "returned": 8,
-        "accepted": 8,
+        "returned": 7,
+        "accepted": 7,
         "errors": []
       },
       "기타": {
         "queries": 11,
-        "returned": 56,
-        "accepted": 35,
+        "returned": 107,
+        "accepted": 84,
         "errors": []
       }
     },
@@ -174,7 +186,7 @@
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 5,
-        "returned": 1,
+        "returned": 3,
         "errors": []
       },
       "일본": {
@@ -188,14 +200,14 @@
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 7,
-        "returned": 8,
+        "returned": 7,
         "errors": []
       },
       "기타": {
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 11,
-        "returned": 56,
+        "returned": 107,
         "errors": []
       }
     },
@@ -228,17 +240,17 @@
         "region": "한국",
         "name": "국가기술표준원 고시·공고",
         "url": "https://www.kats.go.kr/content.do?cmsid=239",
-        "checked": true,
+        "checked": false,
         "accepted": 0,
-        "error": null
+        "error": "The operation was aborted due to timeout"
       },
       {
         "region": "중국",
         "name": "CNCA",
         "url": "https://www.cnca.gov.cn/",
-        "checked": true,
+        "checked": false,
         "accepted": 0,
-        "error": null
+        "error": "fetch failed"
       },
       {
         "region": "중국",
@@ -284,9 +296,9 @@
         "region": "기타",
         "name": "BIS",
         "url": "https://www.bis.gov.in/",
-        "checked": false,
+        "checked": true,
         "accepted": 0,
-        "error": "terminated"
+        "error": null
       },
       {
         "region": "기타",
@@ -313,7 +325,7 @@
         "error": "HTTP 403"
       }
     ],
-    "filteredOut": 61,
+    "filteredOut": 109,
     "failures": []
   }
 }
