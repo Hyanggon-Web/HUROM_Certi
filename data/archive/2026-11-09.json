@@ -2,7 +2,22 @@
   "generatedAt": "2026-11-08T23:00:00.000Z",
   "periodStart": "2026-11-02",
   "periodEnd": "2026-11-08",
-  "items": [],
+  "items": [
+    {
+      "id": "0691f7ba132c9292",
+      "title": "CBIC Clarifies Mandatory BIS Registration for Standalone Hard Disk Drives Effective November 5, 2026; Existing Norms for USB External HDDs to Continue - A2Z Taxcorp LLP",
+      "summary": "CBIC Clarifies Mandatory BIS Registration for Standalone Hard Disk Drives Effective November 5, 2026; Existing Norms for USB External HDDs to Continue A2Z Taxcorp LLP",
+      "region": "기타",
+      "category": "인도 BIS",
+      "date": "2026-11-05",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOUzI4Z2EwaEFkSzB1Z2Q1SFJJM2hocWtMWHFOVXVBVmNjZjNIMklsVDlpNTBNZ2c4Q05WMzFWN2JYXzAxYnhmdkJ4c0RZNWswNXoxX0s4WFc4RUNLMmF3SGFQN1liMjVWNzAzWnNnOHVLMlB2N2JjYUdXbWsxUmNnN2pIQW9kdDVIc1JpUEtnUEZkWVUtSkhCemlrcUI4TVZQOVU3ZEpUdGxzckNGOFNValFia3RTZXpCSVBEWURrR0VTOWlXUE9JYXUwblBzNmFWTHlmV1lKWlRTX0lNeUFCblJJNHo4NEEydlFWWUN2TXRsSDVOYVVMdkRNVVNLMlB6Vnc?oc=5",
+      "source": "Google News RSS",
+      "sourceType": "news-search",
+      "verification": "검색 결과 — 공식 원문 확인 필요",
+      "titleKo": "CBIC는 2026년 11월 5일부터 독립형 하드 디스크 드라이브에 대한 필수 BIS 등록을 명시합니다. USB 외장형 HDD에 대한 기존 표준은 계속 유지됩니다 - A2Z Taxcorp LLP",
+      "summaryKo": "CBIC는 2026년 11월 5일부터 독립형 하드 디스크 드라이브에 대한 필수 BIS 등록을 명시합니다. A2Z Taxcorp LLP를 계속 유지하기 위한 USB 외장형 HDD의 기존 표준"
+    }
+  ],
   "fcmItems": [],
   "collection": {
     "fcmStats": {
@@ -105,49 +120,51 @@
       ]
     },
     "source": "Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",
-    "successfulQueries": 49,
-    "totalQueries": 39,
+    "successfulQueries": 45,
+    "totalQueries": 46,
     "regionStats": {
       "미국": {
         "queries": 5,
         "returned": 14,
-        "accepted": 10,
+        "accepted": 9,
         "errors": []
       },
       "EU": {
         "queries": 8,
-        "returned": 12,
-        "accepted": 6,
+        "returned": 16,
+        "accepted": 8,
         "errors": []
       },
       "한국": {
-        "queries": 10,
-        "returned": 800,
-        "accepted": 3,
-        "errors": []
-      },
-      "중국": {
         "queries": 6,
-        "returned": 1,
+        "returned": 300,
         "accepted": 0,
         "errors": []
       },
+      "중국": {
+        "queries": 4,
+        "returned": 7,
+        "accepted": 3,
+        "errors": [
+          "CCC·CNCA: Status code 429"
+        ]
+      },
       "일본": {
         "queries": 3,
-        "returned": 3,
+        "returned": 4,
         "accepted": 2,
         "errors": []
       },
       "국제": {
         "queries": 7,
-        "returned": 11,
-        "accepted": 9,
+        "returned": 1,
+        "accepted": 1,
         "errors": []
       },
       "기타": {
-        "queries": 11,
-        "returned": 104,
-        "accepted": 78,
+        "queries": 13,
+        "returned": 37,
+        "accepted": 32,
         "errors": []
       }
     },
@@ -163,42 +180,44 @@
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 8,
-        "returned": 12,
+        "returned": 16,
         "errors": []
       },
       "한국": {
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
-        "queries": 10,
-        "returned": 800,
+        "queries": 6,
+        "returned": 300,
         "errors": []
       },
       "중국": {
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
-        "queries": 6,
-        "returned": 1,
-        "errors": []
+        "queries": 4,
+        "returned": 7,
+        "errors": [
+          "CCC·CNCA: Status code 429"
+        ]
       },
       "일본": {
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 3,
-        "returned": 3,
+        "returned": 4,
         "errors": []
       },
       "국제": {
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 7,
-        "returned": 11,
+        "returned": 1,
         "errors": []
       },
       "기타": {
-        "count": 0,
-        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
-        "queries": 11,
-        "returned": 104,
+        "count": 1,
+        "status": "수집됨",
+        "queries": 13,
+        "returned": 37,
         "errors": []
       }
     },
@@ -231,9 +250,9 @@
         "region": "한국",
         "name": "국가기술표준원 고시·공고",
         "url": "https://www.kats.go.kr/content.do?cmsid=239",
-        "checked": false,
+        "checked": true,
         "accepted": 0,
-        "error": "The operation was aborted due to timeout"
+        "error": null
       },
       {
         "region": "중국",
@@ -316,7 +335,398 @@
         "error": "HTTP 403"
       }
     ],
-    "filteredOut": 93,
-    "failures": []
+    "filteredOut": 54,
+    "certificationRejected": [
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-03",
+        "title": "Korean Compliance: Certifications, Audits and Updates - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-06",
+        "title": "UL Solutions Collaborates on Cross-Industry Initiative to Modernize Life Science Regulated Training - UL Solutions",
+        "reason": "비규제·홍보성 자료"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-03",
+        "title": "UL Solutions Inc. Reports Strong Third Quarter 2026 Results - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-02",
+        "title": "Brazil: Inmetro Portaria 231:2026 for LED Lighting Products - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-06",
+        "title": "At the Center of Safety - Célina Kikkine - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-05",
+        "title": "UL Solutions Expands High-Wind Testing Services in North America - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-06",
+        "title": "Modernizing GxP Training and Qualification Programs - UL Solutions",
+        "reason": "비규제·홍보성 자료"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-05",
+        "title": "Before the Storm: Testing for Severe Weather in a Changing World - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-04",
+        "title": "Sustainable Cleaning Formulations: How to Create Eco Friendly Products Without Compromising Performance - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "EU",
+        "category": "CE·EMC·ErP·RoHS",
+        "date": "2026-11-04",
+        "title": "Brussels, 4.11.2026 SWD(2026) 699 final COMMISSION STAFF WORKING DOCUMENT Ukraine 2026 Report Accompanying the document COMMUNI - EUR-Lex",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "EU",
+        "category": "CE·EMC·ErP·RoHS",
+        "date": "2026-11-06",
+        "title": "Produse chimice - trade.ec.europa.eu",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "EU",
+        "category": "CE·EMC·ErP·RoHS",
+        "date": "2026-11-06",
+        "title": "Etichetarea și ambalarea - trade.ec.europa.eu",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "EU",
+        "category": "CE·EMC·ErP·RoHS",
+        "date": "2026-11-04",
+        "title": "Brussels, 4.11.2026 SWD(2026) 694 final COMMISSION STAFF WORKING DOCUMENT Montenegro 2026 Report Accompanying the document COMM - Enlargement and Eastern Neighbourhood",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "EU",
+        "category": "CE·EMC·ErP·RoHS",
+        "date": "2026-11-04",
+        "title": "Brussels, 4.11.2026 SWD(2026) 698 final COMMISSION STAFF WORKING DOCUMENT Republic of Moldova 2026 Report Accompanying the docu - Enlargement and Eastern Neighbourhood",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "EU",
+        "category": "CE·EMC·ErP·RoHS",
+        "date": "2026-11-04",
+        "title": "Brussels, 4.11.2026 SWD(2026) 695 final COMMISSION STAFF WORKING DOCUMENT Serbia 2026 Report Accompanying the document COMMUNIC - Enlargement and Eastern Neighbourhood",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "EU",
+        "category": "CE·EMC·ErP·RoHS",
+        "date": "2026-11-06",
+        "title": "FRAMEWORK SERVICE CONTRACT - European Commission",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "일본",
+        "category": "PSE",
+        "date": "2026-11-02",
+        "title": "本当に安全？ 身近な製品の事故に気をつけましょう！ - 経済産業省 METI Journal ONLINE",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "일본",
+        "category": "PSE",
+        "date": "2026-11-05",
+        "title": "エレクトロニクス、工作機械・部品――廃墟から世界を席巻。戦後の成功体験が今、問いかけるものとは - 経済産業省 METI Journal ONLINE",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "국제",
+        "category": "IEC",
+        "date": "2026-11-06",
+        "title": "IEC 60884-1/AMD1:2026 PRV - IEC Webstore",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "Electrical licensing - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-05",
+        "title": "Agriculture - WorkSafe.qld.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-05",
+        "title": "Frequently asked questions - WorkSafe.qld.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-05",
+        "title": "Construction - WorkSafe.qld.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "Disconnect/Reconnect restricted licence - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "Completion of apprenticeship - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "Mutual recognition - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-03",
+        "title": "Member of the public injured by falling tree - WorkSafe.qld.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "Electrical permits – University technician application - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-03",
+        "title": "Building and Energy legislative framework - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "Electrical contractor and In-House Electrical Installing Work licence - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "Renew Electrical Licence - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-02",
+        "title": "Private security - Victoria Police",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "Exemption to hold an Electrical Contractor's licence - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "Register a boat - Queensland Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-02",
+        "title": "E-Bike rules in Queensland - Queensland Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "Register a management representative - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-02",
+        "title": "Private security licence activities - Victoria Police",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "Electrical licensing - Change of name - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-02",
+        "title": "Changes to private security licences and registrations - Victoria Police",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-05",
+        "title": "Legislation changes for medical practitioners - NSW Health",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "Contact us - Therapeutic Goods Administration (TGA)",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "#StanleyOnSite: Stanley’s adventures in a snapshot - SafeWork SA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-06",
+        "title": "NSW medicines, poisons and therapeutic goods legislation overview - NSW Health",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-05",
+        "title": "Missing records cost Vista Electrical Controls $15,000 - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-04",
+        "title": "Freight company charged after worker struck by forklift - SafeWork SA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-05",
+        "title": "NSW Health - NSW Health",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-05",
+        "title": "Residential care facilities - NSW Health",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-05",
+        "title": "WA award summaries - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "EU",
+        "category": "CE",
+        "date": "2026-11-05",
+        "title": "Baird Medical and Alpmed Announce FDA 510(k) and EU CE Submissions for Irreversible Electroporation (IRE) System - GlobeNewswire",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "중국",
+        "category": "CCC",
+        "date": "2026-11-02",
+        "title": "深圳市市场监督管理局关于开展2026年度强制性产品认证获证组织“双随机、一公开”监督检查工作情况的通报 - 深圳政府在线",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "중국",
+        "category": "CCC",
+        "date": "2026-11-07",
+        "title": "小米18标准版获3C认证：下个月见！无背屏、无防窥屏 - 驱动之家",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "중국",
+        "category": "CCC",
+        "date": "2026-11-07",
+        "title": "小米 18 标准版获3C 认证，7200 毫安电池配100W 快充|小米|骁龙8 Elite Gen 6|3C 认证_新浪新闻 - 手机新浪网",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "인도 BIS",
+        "date": "2026-11-05",
+        "title": "BIS Standards – Implementations Next Month – November 2026 - MPR India Certification",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "인도 BIS",
+        "date": "2026-11-07",
+        "title": "Assam: BIS raids Bijni jewellery shop over alleged fake hallmarking - The Sentinel - of this Land, for its People",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      }
+    ],
+    "certificationPublishedByRegion": {
+      "미국": 0,
+      "EU": 0,
+      "한국": 0,
+      "중국": 0,
+      "일본": 0,
+      "국제": 0,
+      "기타": 1
+    },
+    "failures": [
+      "중국/CCC·CNCA: Status code 429"
+    ]
   }
 }

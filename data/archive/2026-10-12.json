@@ -4,20 +4,6 @@
   "periodEnd": "2026-10-11",
   "items": [
     {
-      "id": "74cbdc216cd3bc5e",
-      "title": "화물용 전기 자전거 안 전기 준·주행 규정 신설…판로 열린다 [옴부즈만 ...",
-      "summary": "국가 기술표준원 도 자전거법 개정에 발맞추어 카고바이크의 안전성을 보장할 「 전기용품 및 생활 용품 안전관리법」 하위규정인 KC 안전인증 기준을 적기에 마련하겠다고 답했다. 이모빌리티 업계는 이번 규제 개선에 대해...",
-      "region": "한국",
-      "category": "KC",
-      "date": "2026-10-08",
-      "url": "https://www.news1.kr/industry/sb-founded/6313735",
-      "source": "NAVER 뉴스 검색",
-      "sourceType": "naver-news-search",
-      "verification": "검색 결과 — 공식 원문 확인 필요",
-      "titleKo": "화물용 전기 자전거 안 전기 준·주행 규정 신설…판로 열린다 [옴부즈만 ...",
-      "summaryKo": "국가 기술표준원 도 자전거법 개정에 발맞추어 카고바이크의 안전성을 보장할 「 전기용품 및 생활 용품 안전관리법」 하위규정인 KC 안전인증 기준을 적기에 마련하겠다고 답했다. 이모빌리티 업계는 이번 규제 개선에 대해..."
-    },
-    {
       "id": "5c8fb77bdd235388",
       "title": "Electrical Safety and Other Legislation Amendment Act 2024 - WorkSafe.qld.gov",
       "summary": "Electrical Safety and Other Legislation Amendment Act 2024 WorkSafe.qld.gov",
@@ -86,30 +72,30 @@
       ]
     },
     "source": "Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",
-    "successfulQueries": 49,
-    "totalQueries": 39,
+    "successfulQueries": 46,
+    "totalQueries": 46,
     "regionStats": {
       "미국": {
         "queries": 5,
-        "returned": 9,
-        "accepted": 7,
+        "returned": 5,
+        "accepted": 4,
         "errors": []
       },
       "EU": {
-        "queries": 8,
-        "returned": 3,
-        "accepted": 1,
+        "queries": 9,
+        "returned": 1,
+        "accepted": 0,
         "errors": []
       },
       "한국": {
-        "queries": 10,
-        "returned": 800,
-        "accepted": 28,
+        "queries": 5,
+        "returned": 300,
+        "accepted": 10,
         "errors": []
       },
       "중국": {
         "queries": 5,
-        "returned": 2,
+        "returned": 6,
         "accepted": 2,
         "errors": []
       },
@@ -121,14 +107,14 @@
       },
       "국제": {
         "queries": 7,
-        "returned": 6,
-        "accepted": 4,
+        "returned": 2,
+        "accepted": 1,
         "errors": []
       },
       "기타": {
-        "queries": 11,
-        "returned": 44,
-        "accepted": 32,
+        "queries": 13,
+        "returned": 105,
+        "accepted": 78,
         "errors": []
       }
     },
@@ -137,28 +123,28 @@
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 5,
-        "returned": 9,
+        "returned": 5,
         "errors": []
       },
       "EU": {
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
-        "queries": 8,
-        "returned": 3,
+        "queries": 9,
+        "returned": 1,
         "errors": []
       },
       "한국": {
-        "count": 1,
-        "status": "수집됨",
-        "queries": 10,
-        "returned": 800,
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 5,
+        "returned": 300,
         "errors": []
       },
       "중국": {
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 5,
-        "returned": 2,
+        "returned": 6,
         "errors": []
       },
       "일본": {
@@ -172,14 +158,14 @@
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 7,
-        "returned": 6,
+        "returned": 2,
         "errors": []
       },
       "기타": {
         "count": 1,
         "status": "수집됨",
-        "queries": 11,
-        "returned": 44,
+        "queries": 13,
+        "returned": 105,
         "errors": []
       }
     },
@@ -220,9 +206,9 @@
         "region": "중국",
         "name": "CNCA",
         "url": "https://www.cnca.gov.cn/",
-        "checked": false,
+        "checked": true,
         "accepted": 0,
-        "error": "fetch failed"
+        "error": null
       },
       {
         "region": "중국",
@@ -268,9 +254,9 @@
         "region": "기타",
         "name": "BIS",
         "url": "https://www.bis.gov.in/",
-        "checked": true,
+        "checked": false,
         "accepted": 0,
-        "error": null
+        "error": "The operation was aborted due to timeout"
       },
       {
         "region": "기타",
@@ -297,7 +283,704 @@
         "error": "HTTP 403"
       }
     ],
-    "filteredOut": 69,
+    "filteredOut": 98,
+    "certificationRejected": [
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-10-09",
+        "title": "China Issues GB 7916-2026 for Cosmetics - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-10-06",
+        "title": "UL Solutions Launches Modeling and Simulation Service for Gypsum Board Manufacturers - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-10-07",
+        "title": "Powering the AI Boom Without Losing Sight of Electrical Safety - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-10-06",
+        "title": "ULTRUS® ComplianceWire®: Shaping the Future of Workforce Training in Life Sciences - UL Solutions",
+        "reason": "비규제·홍보성 자료"
+      },
+      {
+        "region": "일본",
+        "category": "PSE",
+        "date": "2026-10-09",
+        "title": "「令和8年度電気用品安全法オンラインセミナー」を開催します - 中国経済産業局",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "일본",
+        "category": "PSE",
+        "date": "2026-10-08",
+        "title": "電気用品安全法 - 経済産業省",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "일본",
+        "category": "PSE",
+        "date": "2026-10-06",
+        "title": "枯渇する産業用地！改正地域未来法で自治体・民間の開発を支援 - 経済産業省 METI Journal ONLINE",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "일본",
+        "category": "PSE",
+        "date": "2026-10-06",
+        "title": "外国為替及び外国貿易法に基づく 輸出貿易管理令等の改正について - 経済産業省",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "국제",
+        "category": "IEC",
+        "date": "2026-10-08",
+        "title": "IEC 60068-2-64:2026 - IEC Webstore",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "필리핀 PS·ICC",
+        "date": "2026-10-07",
+        "title": "BookLibrary Manager | | Laundry appliances - BPS S&C Portal",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Resolve a problem or report a concern - Energy Safe (VIC)",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Industry support - Energy Safe Victoria",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Community support - Energy Safe Victoria",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "Step 1: check the rules to follow - ACMA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-05",
+        "title": "Contact information - LGIRS - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "Our structure - Australian Maritime Safety Authority",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Eligibility requirements and training for private security licences - Victoria Police",
+        "reason": "비규제·홍보성 자료"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-09",
+        "title": "New electrification and efficiency standards and regulations for Victorian buildings - energy.vic.gov.au",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Apartment fire safety - Country Fire Authority | CFA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Fire equipment maintenance services - Country Fire Authority | CFA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-05",
+        "title": "Plumbers - Building and Plumbing Commission",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Renew your domestic certificate of competency from overseas - Australian Maritime Safety Authority",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-09",
+        "title": "Rental homes - energy.vic.gov.au",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "EV charger design and installation training - Solar Victoria",
+        "reason": "비규제·홍보성 자료"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Proposed minor changes to the look of seafarer certificates - Australian Maritime Safety Authority",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Work Well Conference Brisbane 2026 - WorkSafe.qld.gov",
+        "reason": "비규제·홍보성 자료"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Fire extinguishers - Country Fire Authority | CFA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Reform of Australia’s electronic surveillance framework - Department of Home Affairs Website",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Apply for or update a Technical Master File (TMF) - Therapeutic Goods Administration (TGA)",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Using machinery - Country Fire Authority | CFA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "Register now: inaugural National Maritime Stakeholder Forum - Australian Maritime Safety Authority",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Workplace fire training services - Country Fire Authority | CFA",
+        "reason": "비규제·홍보성 자료"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Apply for or update a Type II Plasma Master File (PMF) - Therapeutic Goods Administration (TGA)",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Consultation now open on proposed minor changes to the look of seafarer certificates - Australian Maritime Safety Authority",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "National Maritime WHS Regulators Forum - Australian Maritime Safety Authority",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "Veterinary Health Certificate for Animal Products | Requirements | HS code 0207 to Mexico - Business.gov.au",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Who does what - Country Fire Authority | CFA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Enforcement of smoking laws - Queensland Health",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "The Global Online Safety Regulators Network - eSafety Commissioner",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "Search and rescue collaborations - Australian Maritime Safety Authority",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Preventing house fires - Country Fire Authority | CFA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Have your say—make a submission - Australian Maritime Safety Authority",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Medicines and poisons recent updates - Health.vic",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-10",
+        "title": "View - Tasmanian Legislation Online",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Planning and permits - Country Fire Authority | CFA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Look up before you cut this spring - Energy Safe (VIC)",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-09",
+        "title": "For Accredited Service Providers: apply, renew, manage your accreditation - NSW Climate and Energy Action",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Environmental Planning and Assessment Regulation 2021 - NSW Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-05",
+        "title": "Governance and the commission - Energy Safe Victoria",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Cyber Security Act - Department of Home Affairs Website",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Ex-storm chaser wins top workplace safety award - SafeWork SA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-09",
+        "title": "Schedule a port State control inspection for a passenger ship - Australian Maritime Safety Authority",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Preparing and submitting Type I Plasma Master Files - Therapeutic Goods Administration (TGA)",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-05",
+        "title": "How well do you know your workplace regulations? - Jobs and Skills WA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Fire safety on the farm - Country Fire Authority | CFA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-09",
+        "title": "7 star energy efficiency building standards - energy.vic.gov.au",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "Benefits of ADS-B - Civil Aviation Safety Authority",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Cost-of-living benefits - energy.vic.gov.au",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Repetitive and strenuous work and falls continue to drive workers’ compensation claims in ACT small businesses - ACT WorkSafe",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "2026 ANNUAL REPORT - NSW Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "Apply for the Life Support Equipment Energy Subsidy - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-11",
+        "title": "Submission on the Draft Expectations for Data Centres and AI Infrastructure Developers: Tasmania - engage.building.tas.gov.au",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-09",
+        "title": "Appendix 3: Socio-economic target actions - First Peoples - State Relations",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-09",
+        "title": "Aboriginal and Torres Strait Islander community safety - Victoria Police",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Loss of control and equipment contact with water involving Bell 412EP, VH-VJF - ATSB",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "Targeted Compliance Program: 2024-25 - NSW EPA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Fire pit and chimenea safety - Country Fire Authority | CFA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "General forms publications and reports - consumeraffairs.tas.gov.au",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Licences and works approvals for prescribed premises - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Industrial hemp production in SA - pir.sa.gov.au",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "public-events-oct06 with cover caveat - SA Health",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "Artificial Intelligence in Victorian Public Health Services - Health.vic",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Essential safety measures for businesses - Country Fire Authority | CFA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "New types of training coming to Victoria for jobs in renewable energy | News and articles - Department of Jobs, Skills, Industry and Regions",
+        "reason": "비규제·홍보성 자료"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "View gazette - ACT Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Restrictions and permits for farming - Country Fire Authority | CFA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-08",
+        "title": "Industry obligations - Department of Home Affairs Website",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "Radiation publications and consultation documents - NSW EPA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Trialling new road safety camera technology - Vic Gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "Bumper grain harvest puts spotlight on road safety in South Australia - | NHVR",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-09",
+        "title": "NSW Gas Statement - NSW Climate and Energy Action",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-09",
+        "title": "Electronic devices and photography policy - Early Learning Victoria",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-07",
+        "title": "NHVR urges Victorian grain growers to keep compliance top of mind this harvest season - | NHVR",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-09",
+        "title": "Caboolture PSP 4 Design and Development Manual Part B - Effective October 09 - City of Moreton Bay",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "Commonwealth Ombudsman 2025–26 Annual Report - Commonwealth Ombudsman",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-06",
+        "title": "About the Fire Danger Period - Country Fire Authority | CFA",
+        "reason": "비규제·홍보성 자료"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-10-11",
+        "title": "발암물질 모자 이름 바꿔 다시 팔았다…직구족 비상",
+        "reason": "KC: 전기용품 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-10-11",
+        "title": "[단독]해외직구 유해 제품, 이름 등 바꿔 재유통 3년간 1621건 적발",
+        "reason": "KC: 전기용품 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-10-11",
+        "title": "[단독]해외직구 유해제품, 차단하면 상품명·계정 바꿔 슬쩍 재판매",
+        "reason": "KC: 전기용품 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-10-08",
+        "title": "화물용 전기 자전거 안 전기 준·주행 규정 신설…판로 열린다 [옴부즈만 ...",
+        "reason": "KC: 전기용품 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-10-07",
+        "title": "아이들 홀린 말랑이·왁뿌볼…안전 '사각'",
+        "reason": "KC: 전기용품 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-10-06",
+        "title": "[단독] '말랑이·왁뿌볼' 안전 비상…KC 미인증 어린이제품 4년새 6배 급...",
+        "reason": "KC: 전기용품 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-10-06",
+        "title": "휴대용 에탄올 화로 안전성 검증 본격화… FITI, 전문 시험·검사 인프라...",
+        "reason": "KC: 전기용품 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-10-08",
+        "title": "화물용 전기 자전거 안전기준 ·주행 규정 신설…판로 열린다 [옴부즈만 ...",
+        "reason": "KC: 전기용품 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-10-06",
+        "title": "[단독] '말랑이·왁뿌볼' 안전 비상…KC 미인증 어린이제품 4년새 6배 급...",
+        "reason": "KC: 국가기술표준원 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-10-06",
+        "title": "[단독] '말랑이·왁뿌볼' 안전 비상…KC 미인증 어린이제품 4년새 6배 급...",
+        "reason": "KC: 국가기술표준원 관련성 없음"
+      },
+      {
+        "region": "중국",
+        "category": "CCC",
+        "date": "2026-10-08",
+        "title": "市场监管总局加严灯具、镇流器等产品CCC认证要求 - 央广网",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "중국",
+        "category": "CCC",
+        "date": "2026-10-07",
+        "title": "大批新国标电动车3C认证被暂停！买车不查这几点，大概率上不了牌 - news.qq.com",
+        "reason": "인증·전기전자 관련성 불충분"
+      }
+    ],
+    "certificationPublishedByRegion": {
+      "미국": 0,
+      "EU": 0,
+      "한국": 0,
+      "중국": 0,
+      "일본": 0,
+      "국제": 0,
+      "기타": 1
+    },
     "failures": []
   }
 }

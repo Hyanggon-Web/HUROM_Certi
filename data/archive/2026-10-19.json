@@ -4,6 +4,20 @@
   "periodEnd": "2026-10-18",
   "items": [
     {
+      "id": "4f62f3cfd9599692",
+      "title": "新版灯具、镇流器3C认证实施规则公布| 香港贸易发展局经贸研究 - HKTDC Research",
+      "summary": "新版灯具、镇流器3C认证实施规则公布| 香港贸易发展局经贸研究 HKTDC Research",
+      "region": "중국",
+      "category": "CNCA",
+      "date": "2026-10-15",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE16SEh6OXNzOGlkd011cTVkdDRkN2xRd3poMm9GSmJFbW9vTW0yTlN5d1Y3UFBNdXRfN1ZvRGlEd2ZvdzR4VC1wY0wwQU5IdzJPVmkzdC1xWGU2OGlfQU5SbEZB?oc=5",
+      "source": "Google News RSS",
+      "sourceType": "news-search",
+      "verification": "검색 결과 — 공식 원문 확인 필요",
+      "titleKo": "램프 및 안정기에 대한 3C 인증 시행 규칙의 새 버전 발표 | 홍콩무역발전국 경제무역연구 - HKTDC Research",
+      "summaryKo": "램프 및 안정기에 대한 3C 인증 시행 규칙의 새 버전 발표 | 홍콩 무역 발전 위원회 경제 무역 연구 HKTDC 연구"
+    },
+    {
       "id": "76e3f80441188d50",
       "title": "BIS standards mandatory for aluminium utensils; beverage can rules to kick in from April 2027 - Zee Business",
       "summary": "BIS standards mandatory for aluminium utensils; beverage can rules to kick in from April 2027 Zee Business",
@@ -16,6 +30,20 @@
       "verification": "검색 결과 — 공식 원문 확인 필요",
       "titleKo": "알루미늄 식기에 대한 필수 BIS 표준; 2027년 4월부터 음료 캔 규정 시행 - Zee Business",
       "summaryKo": "알루미늄 식기에 대한 필수 BIS 표준; 2027년 4월부터 음료 캔 규정 시행 Zee Business"
+    },
+    {
+      "id": "b888f780cccabd69",
+      "title": "Updated prefilled syringe testing under ISO 11040-8 - News-Medical",
+      "summary": "Updated prefilled syringe testing under ISO 11040-8 News-Medical",
+      "region": "국제",
+      "category": "ISO",
+      "date": "2026-10-13",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWFdGSFVyWW1LWWhCaEhudEdra1hKTFNDVzZNWjlNOXRxQ1VSN2Y1dU1UZVF1Y25nbmJTQkt6Y3BJSllySGc4emN6UzZWUXFfN1BqUXpVT1o2UW92WlB2b0xjbERsclZIOW53STlCM3RqQ3ppZXRUdThVN0ZSNzVheXNGSUV6bzExMHU4d0RFcWdZQmppWkZTM0Y1blpuaGdDb1FfMWRpSDM?oc=5",
+      "source": "Google News RSS",
+      "sourceType": "news-search",
+      "verification": "검색 결과 — 공식 원문 확인 필요",
+      "titleKo": "ISO 11040-8에 따라 업데이트된 사전 충전 주사기 테스트 - 뉴스-의료",
+      "summaryKo": "ISO 11040-8에 따라 업데이트된 사전 충전 주사기 테스트 News-Medical"
     }
   ],
   "fcmItems": [
@@ -159,32 +187,34 @@
       ]
     },
     "source": "Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",
-    "successfulQueries": 49,
-    "totalQueries": 39,
+    "successfulQueries": 43,
+    "totalQueries": 46,
     "regionStats": {
       "미국": {
         "queries": 5,
-        "returned": 14,
-        "accepted": 9,
+        "returned": 8,
+        "accepted": 5,
         "errors": []
       },
       "EU": {
         "queries": 8,
-        "returned": 10,
-        "accepted": 5,
+        "returned": 4,
+        "accepted": 1,
         "errors": []
       },
       "한국": {
-        "queries": 10,
-        "returned": 800,
-        "accepted": 4,
+        "queries": 6,
+        "returned": 300,
+        "accepted": 0,
         "errors": []
       },
       "중국": {
-        "queries": 5,
-        "returned": 1,
-        "accepted": 1,
-        "errors": []
+        "queries": 4,
+        "returned": 7,
+        "accepted": 5,
+        "errors": [
+          "CCC·CNCA: Status code 429"
+        ]
       },
       "일본": {
         "queries": 3,
@@ -194,15 +224,18 @@
       },
       "국제": {
         "queries": 7,
-        "returned": 19,
-        "accepted": 13,
+        "returned": 9,
+        "accepted": 7,
         "errors": []
       },
       "기타": {
         "queries": 11,
-        "returned": 110,
-        "accepted": 103,
-        "errors": []
+        "returned": 63,
+        "accepted": 57,
+        "errors": [
+          "인도 BIS: Status code 429",
+          "기타 국가 전기안전: Status code 429"
+        ]
       }
     },
     "regionStatus": {
@@ -210,29 +243,31 @@
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 5,
-        "returned": 14,
+        "returned": 8,
         "errors": []
       },
       "EU": {
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
         "queries": 8,
-        "returned": 10,
+        "returned": 4,
         "errors": []
       },
       "한국": {
         "count": 0,
         "status": "해당 기간 검색 결과 없음 또는 확인 불가",
-        "queries": 10,
-        "returned": 800,
+        "queries": 6,
+        "returned": 300,
         "errors": []
       },
       "중국": {
-        "count": 0,
-        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
-        "queries": 5,
-        "returned": 1,
-        "errors": []
+        "count": 1,
+        "status": "수집됨",
+        "queries": 4,
+        "returned": 7,
+        "errors": [
+          "CCC·CNCA: Status code 429"
+        ]
       },
       "일본": {
         "count": 0,
@@ -242,18 +277,21 @@
         "errors": []
       },
       "국제": {
-        "count": 0,
-        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "count": 1,
+        "status": "수집됨",
         "queries": 7,
-        "returned": 19,
+        "returned": 9,
         "errors": []
       },
       "기타": {
         "count": 1,
         "status": "수집됨",
         "queries": 11,
-        "returned": 110,
-        "errors": []
+        "returned": 63,
+        "errors": [
+          "인도 BIS: Status code 429",
+          "기타 국가 전기안전: Status code 429"
+        ]
       }
     },
     "officialCrawl": [
@@ -285,17 +323,17 @@
         "region": "한국",
         "name": "국가기술표준원 고시·공고",
         "url": "https://www.kats.go.kr/content.do?cmsid=239",
-        "checked": true,
+        "checked": false,
         "accepted": 0,
-        "error": null
+        "error": "The operation was aborted due to timeout"
       },
       {
         "region": "중국",
         "name": "CNCA",
         "url": "https://www.cnca.gov.cn/",
-        "checked": true,
+        "checked": false,
         "accepted": 0,
-        "error": null
+        "error": "fetch failed"
       },
       {
         "region": "중국",
@@ -341,9 +379,9 @@
         "region": "기타",
         "name": "BIS",
         "url": "https://www.bis.gov.in/",
-        "checked": true,
+        "checked": false,
         "accepted": 0,
-        "error": null
+        "error": "The operation was aborted due to timeout"
       },
       {
         "region": "기타",
@@ -370,7 +408,561 @@
         "error": "HTTP 403"
       }
     ],
-    "filteredOut": 119,
-    "failures": []
+    "filteredOut": 77,
+    "certificationRejected": [
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-10-15",
+        "title": "Global Wireless Regulatory Updates and Trends 2026 - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-10-16",
+        "title": "UL Solutions Warns of Unauthorized UL Certification Marks on Fire Sprinklers - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-10-13",
+        "title": "From Cold Climates to Desert Heat: Putting HVAC Technology to the Test - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-10-14",
+        "title": "When Lithium-Ion Batteries Fail: Understanding Thermal Runaway and Safety Risks - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-10-16",
+        "title": "U.S. States Packaging EPR: What Producers Need to Know - UL Solutions",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "EU",
+        "category": "CE·EMC·ErP·RoHS",
+        "date": "2026-10-14",
+        "title": "Vegyipari termékek - trade.ec.europa.eu",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "일본",
+        "category": "PSE",
+        "date": "2026-10-16",
+        "title": "令和７年度産業保安等調査研究事業（化学物質規制対 策（化学物質の審査及び製造等の規制に - 経済産業省",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "일본",
+        "category": "PSE",
+        "date": "2026-10-16",
+        "title": "令和7年度エネルギー需給構造高度化基準認証推進事業費 （ルール形成戦略に係る調査研究（欧 - 経済産業省",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "일본",
+        "category": "PSE",
+        "date": "2026-10-16",
+        "title": "電力分野のサイバーセキュリティについて - 資源エネルギー庁",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "일본",
+        "category": "PSE",
+        "date": "2026-10-15",
+        "title": "LPガスへの燃料転換・グリーンLPガスの 社会実装に向けた検討状況 - 経済産業省",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "일본",
+        "category": "PSE",
+        "date": "2026-10-16",
+        "title": "第1回 次世代ガス推進官民協議会 - 経済産業省",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "국제",
+        "category": "IEC",
+        "date": "2026-10-16",
+        "title": "IEC 60335-2-41:2024/AMD1:2026 - IEC Webstore",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "국제",
+        "category": "IEC",
+        "date": "2026-10-15",
+        "title": "IEC 60335-2-53:2026 - IEC Webstore",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "국제",
+        "category": "IEC",
+        "date": "2026-10-16",
+        "title": "IEC 60335-2-41:2024+AMD1:2026 CSV - IEC Webstore",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "국제",
+        "category": "IEC",
+        "date": "2026-10-15",
+        "title": "IEC 60335-2-125:2026 - IEC Webstore",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "국제",
+        "category": "IEC",
+        "date": "2026-10-17",
+        "title": "ISO/IEC 27090:2026 - IEC products and services portal",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "국제",
+        "category": "IECEE",
+        "date": "2026-10-12",
+        "title": "Standard - IECEE",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEENEEP026A Conduct in-service safety testing of electrical cord connected equipment and cord assemblies - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UETTDREL14A Working safely near live electrical apparatus as a non-electrical worker - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEERL0003 Conduct in-service safety testing of electrical cord connected equipment and cord assemblies - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEESS00174 Electrical Safety Testing of Electrical Cord Connected Equipment and Cord Assemblies Skill Set - Training.gov",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "MEM13017 Apply safety practices, procedures and compliance standards associated with licensed electrical work - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEECD0007 Apply work health and safety regulations, codes and practices in the workplace - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEERL0004 Disconnect - reconnect electrical equipment connected to low voltage (LV) installation wiring - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEEHA0026 Maintain equipment associated with hazardous areas - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "MEM23111 Select electrical equipment and components for engineering applications - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEENEEE101A Apply Occupational Health and Safety regulations, codes and practices in the workplace - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEEEL0069 Select and arrange equipment for special LV electrical installations - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEEEL0028 Conduct compliance and functional verification of electrical apparatus and existing circuits - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-14",
+        "title": "Rental providers: Gas and electrical safety - Consumer Affairs Victoria",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UETDREL006 Work safely in the vicinity of live electrical apparatus as a non-electrical worker - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UETTDREL16 Working safely near live electrical apparatus - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEENEEG105A Verify compliance and functionality of low voltage general electrical installations - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEENEEP012A Disconnect / reconnect composite appliances connected to low voltage installation wiring - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "AURETK2002 Use and maintain automotive electrical test equipment - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "Disconnect - reconnect explosion-protected appliances and control devices connected to low voltage installation wiring - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEP20222 Certificate II in Remote Area Essential Service - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEEEL0029 Conduct compliance inspection of LV electrical installations with demand exceeding 100 A per phase - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEESS00098 Restricted - Electrical safety testing of electrical cord connected equipment and cord assemblies - Training.gov",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UETTDRIS51A Coordinate and direct power system switching schedules - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "MEM10022 Commission and decommission high and low voltage equipment or installations - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "MEM10021 Inspect, test and verify electrical installations - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEERL0001 Attach cords and plugs to electrical equipment for connection to a single phase 230 Volt supply - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UETDRMP002 ESI safety rules for work on, near or in the vicinity of electrical apparatus - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEENEEP024A Attach cords and plugs to electrical equipment for connection to a single phase 230 Volt supply - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEERA0091 Service small electrical appliances and power tools - Training.gov",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-18",
+        "title": "Frequently asked questions - Electrical - Energy Safe (VIC)",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UETTDRIS65A Contribute to coordinated HV live working - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UET30619 Certificate III in ESI - Power Systems - Distribution Overhead - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEERL0002 Attach cords, cables and plugs to electrical equipment for connection to 1000 V a.c. or 1500 V d.c. - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "MEM10003 Install and test electrical wiring and circuits up to 1000 volts a.c. and 1500 volts d.c. - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-13",
+        "title": "Luke’s story: Working near energised electrical equipment - WorkSafe.qld.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UETTDREL14 Working safely near live electrical apparatus as a non-electrical worker - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UETTDRIS48 Develop high voltage switching schedule - Training Gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEERL0007 Disconnect-reconnect 3.3 kV electric propulsion components of self-propelled earth moving vehicles - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEEHA0001 Conduct detailed inspection of electrical installations for hazardous areas - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEENEEJ151A Service small electrical appliances and power tools - Training.gov",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UETTDRDP14A Maintain energised HV distribution overhead electrical apparatus (glove) - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UET30919 Certificate III in ESI - Remote Community Utilities Worker - Training Gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEESS00115 Hazardous Areas - Electrical equipment in hazardous areas - pressurisation - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UETDRIS008 Install and maintain electrical apparatus - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "Electrical permits – Ground geophysical survey equipment application - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UET30921 Certificate III in ESI - Very Remote Community Utilities - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UEESS00133 Restricted - Disconnection/Reconnection of Fixed Wired Low Voltage Electrical Equipment - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-12",
+        "title": "Restricted electrical licence - Domestic electrical appliances - Western Australian Government",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "UETDRDO003 Maintain energised high voltage distribution overhead electrical apparatus (glove and barrier) - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "CPCCCM1006A Work safely at heights - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-16",
+        "title": "SHBHIND001 Maintain and organise tools, equipment and work areas - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-12",
+        "title": "Phosphine regulation changes delayed after consultation - SafeWork SA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-14",
+        "title": "Certificate of operation (CoO) - Australian Maritime Safety Authority",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-12",
+        "title": "Energy Savings Scheme - NSW Climate and Energy Action",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-12",
+        "title": "Electronic surveillance framework - Department of Home Affairs Website",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-10-13",
+        "title": "Fines Enforcement Registry (FER) - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "중국",
+        "category": "CCC",
+        "date": "2026-10-13",
+        "title": "灯具、镇流器CCC认证新规来了！这些变化要知道→ - 21财经",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "중국",
+        "category": "CCC",
+        "date": "2026-10-12",
+        "title": "四部委拟定这一领域测试新规！检验检测机构、认证机构违规将被联合惩戒 - ThePaper.cn",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "중국",
+        "category": "CCC",
+        "date": "2026-10-16",
+        "title": "电动自行车3C认证整顿风暴正席卷全国 - 鞭牛士",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "중국",
+        "category": "CCC",
+        "date": "2026-10-14",
+        "title": "REDMI K100标准版入网认证 万级电池百瓦快充 - 中华网",
+        "reason": "인증·전기전자 관련성 불충분"
+      }
+    ],
+    "certificationPublishedByRegion": {
+      "미국": 0,
+      "EU": 0,
+      "한국": 0,
+      "중국": 1,
+      "일본": 0,
+      "국제": 1,
+      "기타": 1
+    },
+    "failures": [
+      "중국/CCC·CNCA: Status code 429",
+      "기타/인도 BIS: Status code 429",
+      "기타/기타 국가 전기안전: Status code 429"
+    ]
   }
 }

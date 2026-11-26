@@ -1,39 +1,906 @@
 {
   "generatedAt": "2026-11-15T23:00:00.000Z",
-  "periodStart": "2026-11-10",
+  "periodStart": "2026-11-09",
   "periodEnd": "2026-11-15",
-  "items": [
-    {
-      "id": "a3a14f1de840b5dd",
-      "title": "Chennai-Based CCTV and AI surveillance solutions Brand, HiFocus, crosses 70 BIS ER Security-Registered CCTV Camera Models - TheWire.in",
-      "summary": "Chennai-Based CCTV and AI surveillance solutions Brand, HiFocus, crosses 70 BIS ER Security-Registered CCTV Camera Models TheWire.in",
-      "region": "기타",
-      "category": "인도 BIS",
-      "date": "2026-11-13",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPOU1RYWZod2RLVFpOS1JFWWpydGlNVjBCM0NPa01jREEyMmE0WDhfemY5aXBtd0wtZlc4T0dLX2paamtZQ1cxUENXLTE1Z0JQU3RoZ3otdlQ5MGpoMUtSc0JxN1BqZXFCRy1rRjlpOXpQbzhnc0VfVlBxU0REUmdkU0w1QTVGclpCOEJmVEVwbG5tY0MxX0x0ajQ3YmVXTERvcFpxZGJReU1TOGxCRDRWT3JyYklDV29aLTJxZ0pIczlKeDhyRExPTEd3UDhjcXZmRXFIamRVSVN4NTZrQW5MTTJ2Mm9pU2NVMThBb1daUdIB9AFBVV95cUxQbVJVUFpRWVdkOFpIU3ZDMWtjLTJHdXoxeU1hUG1DUzBXZ053RFlJcnZXQ3IzUEkzMHBIVk1KMTR2bl92bzZ4bndyRzhIMWNSTmQ0LU1IOXdwU2cxU1VVQU14UkxkOGVjSHZrWjRRZWYteG9DNzZnbkVWUjk0MnlFVWUyTFlrNldPdmJNenZJNHg2UjJaQXR1dHRKNmE1eV84OV9QNGNwMmZ0WXM2Yi04ckt4a3RWRllZcEIxa0ZfbjI1LUNxZDI5WWdNUkRFSWdhSUltNDVDMnE0WHNPemVyWm9fRmZhYUN2TEttelRFWkZLXy03?oc=5",
-      "source": "Google News RSS",
-      "sourceType": "news-search",
-      "titleKo": "첸나이 기반 CCTV 및 AI 감시 솔루션 브랜드 HiFocus, BIS ER 보안 등록 CCTV 카메라 모델 70개 돌파 - TheWire.in",
-      "summaryKo": "첸나이 기반 CCTV 및 AI 감시 솔루션 브랜드 HiFocus, BIS ER 보안 등록 CCTV 카메라 모델 70개 돌파 TheWire.in"
-    },
-    {
-      "id": "c5088e371bf71d6b",
-      "title": "India Clarifies BIS and CDSCO Scope for Electrical Appliances - MPR India Certification",
-      "summary": "India Clarifies BIS and CDSCO Scope for Electrical Appliances MPR India Certification",
-      "region": "기타",
-      "category": "인도 BIS",
-      "date": "2026-11-12",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxONFA0dXJvX0JMY1lMbE1rUGxlc0owQnhDU0R0OFQ1TXJESklEM2RSVzc3c2l1aktSMXFMMDBQdkxtS1VHdzZ5SnRPeGdWSXJtdnhkTDFyVGU2OUNHZ3J0UWRfbktCZzNybmc4T2ZURmNqcDktb09RR0tRNVN0aldzLVZkeWZUMllGYUZHTE1aUFRfbEpiTDNqdGh2V0l0Z28xN0d3?oc=5",
-      "source": "Google News RSS",
-      "sourceType": "news-search",
-      "titleKo": "인도, 전기 기기에 대한 BIS 및 CDSCO 범위 명시 - MPR 인도 인증",
-      "summaryKo": "인도, 전기 기기 MPR 인도 인증에 대한 BIS 및 CDSCO 범위 명시"
-    }
-  ],
+  "items": [],
+  "fcmItems": [],
   "collection": {
-    "source": "Google News RSS",
-    "successfulQueries": 19,
-    "totalQueries": 19,
-    "failures": []
+    "fcmStats": {
+      "queries": 0,
+      "returned": 0,
+      "candidates": 0,
+      "accepted": 0,
+      "errors": [],
+      "rejected": []
+    },
+    "source": "Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",
+    "successfulQueries": 45,
+    "totalQueries": 46,
+    "regionStats": {
+      "미국": {
+        "queries": 5,
+        "returned": 10,
+        "accepted": 4,
+        "errors": [
+          "UL: Status code 429"
+        ]
+      },
+      "EU": {
+        "queries": 8,
+        "returned": 11,
+        "accepted": 1,
+        "errors": []
+      },
+      "한국": {
+        "queries": 5,
+        "returned": 300,
+        "accepted": 5,
+        "errors": []
+      },
+      "중국": {
+        "queries": 5,
+        "returned": 3,
+        "accepted": 1,
+        "errors": []
+      },
+      "일본": {
+        "queries": 3,
+        "returned": 1,
+        "accepted": 1,
+        "errors": []
+      },
+      "국제": {
+        "queries": 7,
+        "returned": 5,
+        "accepted": 1,
+        "errors": []
+      },
+      "기타": {
+        "queries": 13,
+        "returned": 104,
+        "accepted": 81,
+        "errors": []
+      }
+    },
+    "regionStatus": {
+      "미국": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 5,
+        "returned": 10,
+        "errors": [
+          "UL: Status code 429"
+        ]
+      },
+      "EU": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 8,
+        "returned": 11,
+        "errors": []
+      },
+      "한국": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 5,
+        "returned": 300,
+        "errors": []
+      },
+      "중국": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 5,
+        "returned": 3,
+        "errors": []
+      },
+      "일본": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 3,
+        "returned": 1,
+        "errors": []
+      },
+      "국제": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 7,
+        "returned": 5,
+        "errors": []
+      },
+      "기타": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 13,
+        "returned": 104,
+        "errors": []
+      }
+    },
+    "officialCrawl": [
+      {
+        "region": "미국",
+        "name": "UL Standards & Engagement",
+        "url": "https://ulse.org/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "EU",
+        "name": "European Commission",
+        "url": "https://single-market-economy.ec.europa.eu/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "EU",
+        "name": "EUR-Lex",
+        "url": "https://eur-lex.europa.eu/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "한국",
+        "name": "국가기술표준원 고시·공고",
+        "url": "https://www.kats.go.kr/content.do?cmsid=239",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "중국",
+        "name": "CNCA",
+        "url": "https://www.cnca.gov.cn/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "중국",
+        "name": "SAMR",
+        "url": "https://www.samr.gov.cn/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "일본",
+        "name": "METI",
+        "url": "https://www.meti.go.jp/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "국제",
+        "name": "IEC",
+        "url": "https://www.iec.ch/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "국제",
+        "name": "ISO",
+        "url": "https://www.iso.org/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "국제",
+        "name": "IECEE",
+        "url": "https://www.iecee.org/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "기타",
+        "name": "BIS",
+        "url": "https://www.bis.gov.in/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "기타",
+        "name": "BSN",
+        "url": "https://www.bsn.go.id/",
+        "checked": false,
+        "accepted": 0,
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "region": "기타",
+        "name": "MOST",
+        "url": "https://most.gov.vn/",
+        "checked": false,
+        "accepted": 0,
+        "error": "fetch failed"
+      },
+      {
+        "region": "기타",
+        "name": "DTI",
+        "url": "https://www.dti.gov.ph/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      }
+    ],
+    "filteredOut": 94,
+    "certificationRejected": [
+      {
+        "region": "일본",
+        "category": "PSE",
+        "date": "2026-11-09",
+        "title": "水素保安戦略ってなに？ - 経済産業省 METI Journal ONLINE",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "국제",
+        "category": "IEC",
+        "date": "2026-11-12",
+        "title": "IEC 60335-2-102:2026 - IEC Webstore",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-13",
+        "title": "Gas appliance approval - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-14",
+        "title": "Contents - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Retail module - Vic Gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-15",
+        "title": "TLI Release 15.0 Companion Volume part 08 of 10 (Implementation Guide) (ATTACHMENT F - TLIL-TLIP) - Training.gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Falls from height - Vic Gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-11",
+        "title": "Office and business services module - Vic Gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Essential Principles checklist - Therapeutic Goods Administration (TGA)",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Public registers - NSW EPA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-11",
+        "title": "Health and community services module - Vic Gov",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-11",
+        "title": "Apply for building engineering practitioner registration - New - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-13",
+        "title": "Assessment process and time frames for licence and registration applications - NSW Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-15",
+        "title": "Untitled - ACT Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Connecting solar and battery systems to the grid - Queensland Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-15",
+        "title": "Builder fined $150,000 after wall collapses onto neighbouring home - SafeWork SA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Uncrewed traffic management - Civil Aviation Safety Authority",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Export registration with China - DAFF",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-11",
+        "title": "DMPE Annual Report 2025–26 - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Marine radio protocols and procedures - ACMA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-11",
+        "title": "EPA kicks off quarry compliance campaign - NSW EPA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-13",
+        "title": "Council Meeting - 17 November 2026 - Surf Coast Shire",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-09",
+        "title": "Agreement Deed Template - Department for Infrastructure and Transport - South Australia",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Restricted transfer of RWAY Wagons - NSW Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Aged Care Drop-in Sessions WSAC - Rural City of Wangaratta",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-14",
+        "title": "Book launch of Marcelle Freiman's new book of poems 'Dislocations' - Woollahra Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-14",
+        "title": "Ecuador Travel Advice & Safety - Smartraveller",
+        "reason": "비규제·홍보성 자료"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-09",
+        "title": "[Insert Contract Name] - Department for Infrastructure and Transport - South Australia",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "List of licences - NSW EPA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-13",
+        "title": "Samhain, the Spirit of Woollahra Festival Family Day - Woollahra Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-15",
+        "title": "3. OFFICERS REPORTS 3.1. ANNUAL REPORT 2025-2026 REPORT AUTHOR Governance and Information Officer EXECUTIVE General Manager Corp - Douglas Shire Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-15",
+        "title": "Annual Report 2025–26 | Section 6: Appendices - The Bureau of Meteorology",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-11",
+        "title": "RFT 101-27 Provision for Cleaning Services - Fairfield City Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Building Engineering Registration - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Chat Group: In the Open with Think & Think Again - Woollahra Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Eldorado Rural Placemaking - Rural City of Wangaratta",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-09",
+        "title": "2026 Fisher's Ghost Writing Prize winners announced - Campbelltown City Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Pest industry licensing and registration application and renewals - Government of Western Australia Department of Health",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-11",
+        "title": "Textile recycling trial - Surf Coast Shire",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Mini Makers: Festive Paper Embroidery (ages 6-12) - Woollahra Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Darian Road, Torquay, road safety works - Surf Coast Shire",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "The Kiosk - Rural City of Wangaratta",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-11",
+        "title": "Installation of Karaaf Wetlands stormwater diversion system underway - Surf Coast Shire",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Our opening hours during the festive season - Woollahra Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Help Improve Wangaratta-Whitfield Road - Rural City of Wangaratta",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Hansard Display - Parliament of Australia",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Special Storytime Sessions - 16 Days of Activism - Rural City of Wangaratta",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-13",
+        "title": "Imported Food Inspection Scheme - DAFF",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-11",
+        "title": "Fischer Street, Torquay, road resurfacing - Surf Coast Shire",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-09",
+        "title": "Advice for visitors - Surf Coast Shire",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Problem with a product or service you bought - ACCC",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Understanding warnings - Surf Coast Shire",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-09",
+        "title": "The Banyule Story 2025-2026 - Banyule Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-15",
+        "title": "Treasury Annual Report 2025–26 - Treasury.gov.au",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Untitled - Campbelltown City Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "| | Central Queensland Health - Queensland Health",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-09",
+        "title": "Community Sport Booking Policies - Rural City of Wangaratta",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-11",
+        "title": "Notice of Application for a Planning Permit - Cardinia Shire Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-14",
+        "title": "Agenda of Ordinary Meeting - Tuesday, 17 November 2026 - Kiama Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Metropolitan Cemeteries Board Annual Report 2025-2026 - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Give old textiles a new life at Merimbula recycling weekend - Bega Valley Shire Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-13",
+        "title": "Drop-in Paper Sculpture Workshop with Samuel Chan - Woollahra Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Building and Energy Industry Bulletins - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-13",
+        "title": "About certificates of inspection - Queensland Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-13",
+        "title": "Ben Thomas appointed Acting Director, Community & Infrastructure - Rural City of Wangaratta",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-09",
+        "title": "Annual Report 2025–26 - DonateLife",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Biosecurity operations and broker resources - DAFF",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Commercial dog breeders - Agriculture Victoria",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-13",
+        "title": "Enduring Power of Attorney - Western Australian Government",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Apply to volunteer - Country Fire Authority | CFA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Local Planning Scheme No. 4 - City of Fremantle",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Rules for Moving Bees, Apiary Products and Used Apiary Equipment - Natural Resources and Environment Tasmania",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Gatekeeper Public Key Infrastructure (PKI) Framework - Department of Finance (Australia)",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-09",
+        "title": "BLUE MOUNTAINS LOCAL PLANNING PANEL ITEM NO: 3.1 – 9TH NOVEMBER 2026 - Blue Mountains City Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-11",
+        "title": "Food businesses - City of Wanneroo",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-12",
+        "title": "Notice of review of environment protection licences - NSW EPA",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Committee met at 09:00 - Parliament of Australia",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Latest works - Surf Coast Shire",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Industrial Decarbonisation Initiative - NSW Climate and Energy Action",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-10",
+        "title": "Youth Art Exhibition Winner announcement - Rural City of Wangaratta",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-13",
+        "title": "Wellington Waste Transfer Station - Dubbo Regional Council",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "기타",
+        "category": "기타 국가 전기안전",
+        "date": "2026-11-09",
+        "title": "Data Contained in the Human Services Dataset - Communities and Justice",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "EU",
+        "category": "CE",
+        "date": "2026-11-09",
+        "title": "EU cybersecurity CE mark for connected devices, what changes for buyers - Pasquale Pillitteri",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-11-13",
+        "title": "[단독] 정부, 보조배터리 케이스도 ‘난연 재질’ 의무화 추진",
+        "reason": "KC: 전기용품 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-11-13",
+        "title": "[단독] 정부, 보조배터리 케이스도 ‘난연 재질’ 의무화 추진",
+        "reason": "KC: 전기용품 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-11-11",
+        "title": "처참한 현장… 70대 운전자가 몰던 전기 차, 미용실로 돌진 (1명 사망·2명...",
+        "reason": "KC: 국가기술표준원 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-11-10",
+        "title": "[국회와 경제] 로봇산업 법체계 전면 개편 시동··· '지능형 로봇산업...",
+        "reason": "KC: 국가기술표준원 관련성 없음"
+      },
+      {
+        "region": "한국",
+        "category": "KC",
+        "date": "2026-11-13",
+        "title": "[단독] 정부, 보조배터리 케이스도 ‘난연 재질’ 의무화 추진",
+        "reason": "KC: 전기용품 관련성 없음"
+      },
+      {
+        "region": "중국",
+        "category": "CCC",
+        "date": "2026-11-10",
+        "title": "违规改装的电池“烧了一片”，车主被罚！看看电动自行车CCC认证新规怎么说 - 华声在线",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "기타",
+        "category": "인도 BIS",
+        "date": "2026-11-12",
+        "title": "India Clarifies BIS and CDSCO Scope for Electrical Appliances - MPR India Certification",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-11",
+        "title": "UL Solutions Announces Quarterly Dividend - Business Wire",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-11",
+        "title": "Vietnamese-made energy storage system earns international safety certification - Nhan Dan Online",
+        "reason": "인증·전기전자 관련성 불충분"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-14",
+        "title": "Grand Mirrors Strengthens Its Commitment to Quality and Safety Through UL Recognition - 24-7PressRelease.com",
+        "reason": "규격 또는 규제 변경 신호 없음"
+      },
+      {
+        "region": "미국",
+        "category": "UL",
+        "date": "2026-11-09",
+        "title": "UL Solutions to Attend Upcoming Investor Conferences - Business Wire",
+        "reason": "비규제·홍보성 자료"
+      }
+    ],
+    "certificationPublishedByRegion": {
+      "미국": 0,
+      "EU": 0,
+      "한국": 0,
+      "중국": 0,
+      "일본": 0,
+      "국제": 0,
+      "기타": 0
+    },
+    "failures": [
+      "미국/UL: Status code 429"
+    ]
   }
 }
