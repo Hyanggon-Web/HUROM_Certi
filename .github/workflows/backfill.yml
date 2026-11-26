@@ -1,0 +1,73 @@
+name: Backfill historical weekly letters
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/backfill.yml'
+permissions:
+  contents: write
+concurrency:
+  group: weekly-certification-publish
+  cancel-in-progress: false
+jobs:
+  collect:
+    name: Backfill ${{ matrix.issue }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - issue: '2026-10-12'
+            start: '2026-10-05'
+            end: '2026-10-11'
+          - issue: '2026-10-19'
+            start: '2026-10-12'
+            end: '2026-10-18'
+          - issue: '2026-10-26'
+            start: '2026-10-19'
+            end: '2026-10-25'
+          - issue: '2026-11-02'
+            start: '2026-10-26'
+            end: '2026-11-01'
+          - issue: '2026-11-09'
+            start: '2026-11-02'
+            end: '2026-11-08'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Collect historical week without changing latest
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        run: node scripts/update.mjs --issue-date "${{ matrix.issue }}" --start "${{ matrix.start }}" --end "${{ matrix.end }}" --archive-only --skip-existing
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue-${{ matrix.issue }}
+          path: data/archive/${{ matrix.issue }}.json
+          if-no-files-found: error
+  publish:
+    needs: collect
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: issue-*
+          path: data/archive
+          merge-multiple: true
+      - name: Save historical issues without overwriting newer letters
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin main
+          git rebase origin/main
+          git add data/archive/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: archive historical weekly certification issues'
+            git push origin HEAD:main
+          fi
