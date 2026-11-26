@@ -1,4 +1,4 @@
-import {isRegulatoryChange} from "./regulatory-filter.mjs";
+import {regulatoryRejectReason} from "./regulatory-filter.mjs";
 import {crawlOfficial} from "./crawl-official.mjs";
 import fs from "node:fs/promises";
 import crypto from "node:crypto";
@@ -67,41 +67,48 @@ const fcmSources=[
  {region:"국제",category:"FCM 국제",q:'"food contact" regulation migration limit'}
 ];
 const sources=[
- {region:"미국",category:"UL",q:'"UL Solutions" electrical safety certification OR "UL standard" appliance'},
- {region:"미국",category:"UL",q:'"UL 60335" OR "UL 60745" OR "UL 62368" safety standard'},
- {region:"EU",category:"CE",q:'"CE marking" electrical appliances conformity assessment'},
- {region:"EU",category:"EMC",q:'"EMC Directive" electromagnetic compatibility compliance'},
- {region:"EU",category:"ErP",q:'"Ecodesign" "energy-related products" EU regulation'},
- {region:"EU",category:"RoHS",q:'"RoHS Directive" electrical electronic equipment'},
+ {region:"미국",category:"UL",q:'"UL standard" revision'},
+ {region:"미국",category:"UL",q:'"UL 60335" amendment'},
+ {region:"미국",category:"UL",q:'"UL 4200A" update'},
+ {region:"EU",category:"CE",q:'"CE marking" regulation amendment'},
+ {region:"EU",category:"CE",q:'"conformity assessment" electrical EU'},
+ {region:"EU",category:"EMC",q:'"EMC Directive" amendment'},
+ {region:"EU",category:"ErP",q:'"Ecodesign" regulation amendment'},
+ {region:"EU",category:"ErP",q:'"energy labelling" harmonised standards'},
+ {region:"EU",category:"RoHS",q:'"RoHS" exemption amendment'},
  {region:"한국",category:"KC",q:'국가기술표준원 전기용품'},
- {region:"한국",category:"KC",q:'국가기술표준원 전기 용품'},
- {region:"한국",category:"KC",q:'기술표준원 전기용품'},
- {region:"한국",category:"KC",q:'기술표준원 전기 용품'},
- {region:"중국",category:"CCC",q:'CCC 强制性产品认证 电器 安全标准 修订 公告'},
- {region:"중국",category:"CNCA",q:'国家认监委 CNCA 强制性认证 实施规则 更新'},
- {region:"일본",category:"PSE",q:'電気用品安全法 PSE 技術基準 改正 施行'},
- {region:"국제",category:"IEC",q:'"IEC 60335" OR "IEC electrical safety standard"'},
- {region:"국제",category:"ISO",q:'"ISO standard" electrical appliance product safety'},
- {region:"국제",category:"IECEE",q:'"IECEE CB Scheme" electrical certification'},
- {region:"기타",category:"인도 BIS",q:'India "BIS" electrical appliances mandatory certification'},
- {region:"기타",category:"인도네시아 SNI",q:'Indonesia "SNI" electrical appliance certification'},
- {region:"기타",category:"베트남 CR",q:'Vietnam electrical appliance conformity certification CR mark'},
- {region:"기타",category:"필리핀 PS·ICC",q:'Philippines DTI BPS electrical appliances PS ICC certification'},
- {region:"기타",category:"기타 국가 전기안전",q:'electrical appliance safety certification regulations Australia Brazil Mexico Saudi Arabia Thailand Malaysia Turkey South Africa'}
+ {region:"한국",category:"KC",q:'전기용품 안전기준 개정'},
+ {region:"한국",category:"KC",q:'전기용품 안전기준 행정예고'},
+ {region:"중국",category:"CCC",q:'强制性产品认证 电器 修订'},
+ {region:"중국",category:"CCC",q:'CCC 认证 标准 公告'},
+ {region:"중국",category:"CNCA",q:'CNCA 实施规则 修订'},
+ {region:"일본",category:"PSE",q:'電気用品安全法 改正'},
+ {region:"일본",category:"PSE",q:'PSE 技術基準 改正'},
+ {region:"국제",category:"IEC",q:'IEC 60335 amendment'},
+ {region:"국제",category:"IEC",q:'IEC 60335 new edition'},
+ {region:"국제",category:"ISO",q:'ISO electrical standard revision'},
+ {region:"국제",category:"IECEE",q:'IECEE CB Scheme update'},
+ {region:"기타",category:"인도 BIS",q:'India BIS electrical appliances notification'},
+ {region:"기타",category:"인도네시아 SNI",q:'Indonesia SNI electrical revision'},
+ {region:"기타",category:"베트남 CR",q:'Vietnam electrical equipment regulation amendment'},
+ {region:"기타",category:"필리핀 PS·ICC",q:'Philippines DTI BPS electrical certification amendment'},
+ {region:"기타",category:"브라질 INMETRO",q:'Brazil INMETRO electrical appliances regulation'},
+ {region:"기타",category:"호주 전기안전",q:'Australia electrical equipment safety standard update'},
+ {region:"기타",category:"멕시코 NOM",q:'Mexico NOM electrical safety revision'}
 ];
 const officialSources=[
  {region:"미국",category:"UL",domain:"ulse.org",q:"UL standard revision publication"},
  {region:"미국",category:"UL",domain:"ul.com",q:"UL standards safety certification update"},
- {region:"EU",category:"CE·EMC·ErP·RoHS",domain:"eur-lex.europa.eu",q:"electromagnetic compatibility ecodesign RoHS amendment regulation"},
- {region:"EU",category:"CE·EMC·ErP·RoHS",domain:"ec.europa.eu",q:"CE marking EMC ecodesign RoHS regulatory update"},
+ {region:"EU",category:"CE·EMC·ErP·RoHS",domain:"eur-lex.europa.eu",q:"ecodesign energy labelling harmonised standards amendment"},
+ {region:"EU",category:"CE·EMC·ErP·RoHS",domain:"ec.europa.eu",q:"CE marking electrical appliances regulatory amendment"},
  {region:"한국",category:"KC",domain:"kats.go.kr",q:"전기용품 안전기준 개정 고시"},
  {region:"한국",category:"KC",domain:"law.go.kr",q:"전기용품 안전관리 개정 시행"},
- {region:"중국",category:"CCC·CNCA",domain:"cnca.gov.cn",q:"CCC 强制性产品认证 修订 公告"},
+ {region:"중국",category:"CCC·CNCA",domain:"cnca.gov.cn",q:"强制性产品认证 电器 修订"},
  {region:"중국",category:"CCC·CNCA",domain:"samr.gov.cn",q:"电器 强制性认证 标准 修订"},
  {region:"일본",category:"PSE",domain:"meti.go.jp",q:"電気用品安全法 改正 技術基準"},
- {region:"국제",category:"IEC",domain:"iec.ch",q:"IEC 60335 amendment new edition"},
- {region:"국제",category:"ISO",domain:"iso.org",q:"ISO electrical appliance standard revision"},
- {region:"국제",category:"IECEE",domain:"iecee.org",q:"CB Scheme operational document update"},
+ {region:"국제",category:"IEC",domain:"iec.ch",q:"IEC 60335 amendment"},
+ {region:"국제",category:"ISO",domain:"iso.org",q:"ISO electrical standard revision"},
+ {region:"국제",category:"IECEE",domain:"iecee.org",q:"CB Scheme operational documents amendment"},
  {region:"기타",category:"인도 BIS",domain:"bis.gov.in",q:"electrical appliances certification notification"},
  {region:"기타",category:"인도네시아 SNI",domain:"bsn.go.id",q:"SNI peralatan listrik revisi"},
  {region:"기타",category:"베트남 전기안전",domain:"most.gov.vn",q:"thiết bị điện quy chuẩn sửa đổi"},
@@ -201,18 +208,21 @@ fcmStats.rejected=fcmResults.filter(i=>fcmRejectReason(i)).map(i=>({title:i.titl
 console.log("FCM diagnostic",JSON.stringify(fcmStats));
 fcmStats.accepted=fcmItems.length;
 const rank=t=>t==="official-direct"?3:t==="official-site-search"?2:1;
-// Korean KC requires agency + electrical appliances + regulation-change signals in title or summary.
+// Korean KC retains its agency + electrical-appliance + change three-stage filter.
 const kcAgency=/국가기술표준원|기술표준원/i;
-const kcProduct=/전기\s*용품/i;
+const kcProduct=/전기\\s*용품/i;
 const kcChange=/개정|제정|폐지|고시|공고|시행|변경|행정예고|입법예고/i;
-function certificationAccepted(item){
+function certificationRejectReason(item){
+ const content=String(item.title||"")+" "+String(item.summary||"");
  if(item.region==="한국"&&item.category==="KC"){
-  const content=String(item.title||"")+" "+String(item.summary||"");
-  return kcAgency.test(content)&&kcProduct.test(content)&&kcChange.test(content);
+  if(!kcAgency.test(content))return "KC: 국가기술표준원 관련성 없음";
+  if(!kcProduct.test(content))return "KC: 전기용품 관련성 없음";
+  if(!kcChange.test(content))return "KC: 법령·규격 변경 없음";
  }
- return isRegulatoryChange(item);
+ return regulatoryRejectReason(item);
 }
-const items=[...new Map(results.filter(certificationAccepted).sort((a,b)=>rank(a.sourceType)-rank(b.sourceType)).map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
+const rejected=results.map(item=>({item,reason:certificationRejectReason(item)})).filter(entry=>entry.reason);
+const items=[...new Map(results.filter(item=>!certificationRejectReason(item)).sort((a,b)=>rank(a.sourceType)-rank(b.sourceType)).map(item=>[item.id,item])).values()].sort((a,b)=>b.date.localeCompare(a.date));
 // An empty weekly issue is valid when source checks succeed.
 async function translate(value){
  if(!value||/[가-힣]/.test(value))return value;
@@ -232,7 +242,7 @@ const regionStatus=Object.fromEntries(coveredRegions.map(region=>{
  const stats=regionStats[region];
  return [region,{count,status:count>0?"수집됨":stats.errors.length>=stats.queries&&stats.queries>0?"수집 오류":"해당 기간 검색 결과 없음 또는 확인 불가",queries:stats.queries,returned:stats.returned,errors:stats.errors}];
 }));
-const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,fcmItems,collection:{fcmStats,source:"Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,filteredOut:results.length-items.length,failures}};
+const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,fcmItems,collection:{fcmStats,source:"Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,filteredOut:results.length-items.length,certificationRejected:rejected.map(({item,reason})=>({region:item.region,category:item.category,date:item.date,title:item.title,reason})).slice(0,300),certificationPublishedByRegion:Object.fromEntries(coveredRegions.map(region=>[region,items.filter(item=>item.region===region).length])),failures}};
 await fs.mkdir("data/archive",{recursive:true});
 await fs.writeFile("data/archive/"+issueDate+".json",JSON.stringify(output,null,2)+"\n");
 if(!archiveOnly)await fs.writeFile("data/latest.json",JSON.stringify(output,null,2)+"\n");
