@@ -1,0 +1,33 @@
+name: Publish refined archive results
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-refined-archive.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Retrieve seven successful weekly re-collections
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 45780536348
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pattern: issue-*
+          path: data/archive
+          merge-multiple: true
+      - name: Publish updated weekly archive and preserve FCM
+        run: |
+          cp data/archive/2026-11-23.json data/latest.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/archive/ data/latest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: apply improved electrical certification search to seven historical issues'
+            git push origin HEAD:main
+          fi
