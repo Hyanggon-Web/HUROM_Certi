@@ -1,0 +1,298 @@
+{
+  "generatedAt": "2026-10-25T23:00:00.000Z",
+  "periodStart": "2026-10-19",
+  "periodEnd": "2026-10-25",
+  "items": [],
+  "fcmItems": [],
+  "collection": {
+    "fcmStats": {
+      "queries": 10,
+      "returned": 410,
+      "candidates": 11,
+      "accepted": 0,
+      "errors": [],
+      "rejected": [
+        {
+          "title": "Publisher's Platform: Comments sought on FDA petition to add botulism to the infant formula testing list - Food Safety News",
+          "region": "미국",
+          "date": "2026-10-19",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "PFAS in Agriculture: Science, Uncertainty, and Risk Communication - Genetic Literacy Project",
+          "region": "미국",
+          "date": "2026-10-19",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "PFAS Regulation in the UK and European Union: Autumn 2026 Overview - Fieldfisher",
+          "region": "EU",
+          "date": "2026-10-21",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "EU’s CBAM Downstream Extension And Anti-Circumvention Amendments: The Road To Trilogue - Legal 500",
+          "region": "EU",
+          "date": "2026-10-23",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "An update to the Board on the Food Standards Agency's SPS programme: September 2026 - GOV.UK",
+          "region": "EU",
+          "date": "2026-10-19",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "EFSA Publishes Guidance on Safety Assessment of BPA Alternatives in Food-Contact Materials - Food Safety Magazine",
+          "region": "EU",
+          "date": "2026-10-21",
+          "reason": "Regulatory change not matched"
+        },
+        {
+          "title": "[영상]\"미국 FDA·ISO 장벽 넘는다\"… 원주의료기기산업진흥원, 부산서 ...",
+          "region": "한국",
+          "date": "2026-10-21",
+          "reason": "한국 1단계: 식약처/식품의약품안전처/MFDS 불일치"
+        },
+        {
+          "title": "EFSA Publishes Guidance on Safety Assessment of BPA Alternatives in Food-Contact Materials - Food Safety Magazine",
+          "region": "국제",
+          "date": "2026-10-21",
+          "reason": "Regulatory change not matched"
+        },
+        {
+          "title": "PFAS Regulation in the UK and European Union: Autumn 2026 Overview - Fieldfisher",
+          "region": "국제",
+          "date": "2026-10-21",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "Bioactive and Functional Properties of Ferulago angulata Essential Oil for Sustainable Food Packaging Systems - Wiley Online Library",
+          "region": "국제",
+          "date": "2026-10-19",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "Five Reputable Plastic Food Packaging Container Manufacturers in China 2026: Advancing Packaging Solutions - EIN News",
+          "region": "국제",
+          "date": "2026-10-19",
+          "reason": "FCM subject not matched"
+        }
+      ]
+    },
+    "source": "Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",
+    "successfulQueries": 49,
+    "totalQueries": 39,
+    "regionStats": {
+      "미국": {
+        "queries": 5,
+        "returned": 25,
+        "accepted": 17,
+        "errors": []
+      },
+      "EU": {
+        "queries": 8,
+        "returned": 9,
+        "accepted": 5,
+        "errors": []
+      },
+      "한국": {
+        "queries": 10,
+        "returned": 800,
+        "accepted": 9,
+        "errors": []
+      },
+      "중국": {
+        "queries": 6,
+        "returned": 1,
+        "accepted": 0,
+        "errors": []
+      },
+      "일본": {
+        "queries": 3,
+        "returned": 8,
+        "accepted": 6,
+        "errors": []
+      },
+      "국제": {
+        "queries": 7,
+        "returned": 8,
+        "accepted": 6,
+        "errors": []
+      },
+      "기타": {
+        "queries": 11,
+        "returned": 18,
+        "accepted": 10,
+        "errors": []
+      }
+    },
+    "regionStatus": {
+      "미국": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 5,
+        "returned": 25,
+        "errors": []
+      },
+      "EU": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 8,
+        "returned": 9,
+        "errors": []
+      },
+      "한국": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 10,
+        "returned": 800,
+        "errors": []
+      },
+      "중국": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 6,
+        "returned": 1,
+        "errors": []
+      },
+      "일본": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 3,
+        "returned": 8,
+        "errors": []
+      },
+      "국제": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 7,
+        "returned": 8,
+        "errors": []
+      },
+      "기타": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 11,
+        "returned": 18,
+        "errors": []
+      }
+    },
+    "officialCrawl": [
+      {
+        "region": "미국",
+        "name": "UL Standards & Engagement",
+        "url": "https://ulse.org/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "EU",
+        "name": "European Commission",
+        "url": "https://single-market-economy.ec.europa.eu/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "EU",
+        "name": "EUR-Lex",
+        "url": "https://eur-lex.europa.eu/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "한국",
+        "name": "국가기술표준원 고시·공고",
+        "url": "https://www.kats.go.kr/content.do?cmsid=239",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "중국",
+        "name": "CNCA",
+        "url": "https://www.cnca.gov.cn/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "중국",
+        "name": "SAMR",
+        "url": "https://www.samr.gov.cn/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "일본",
+        "name": "METI",
+        "url": "https://www.meti.go.jp/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "국제",
+        "name": "IEC",
+        "url": "https://www.iec.ch/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "국제",
+        "name": "ISO",
+        "url": "https://www.iso.org/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "국제",
+        "name": "IECEE",
+        "url": "https://www.iecee.org/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "기타",
+        "name": "BIS",
+        "url": "https://www.bis.gov.in/",
+        "checked": false,
+        "accepted": 0,
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "region": "기타",
+        "name": "BSN",
+        "url": "https://www.bsn.go.id/",
+        "checked": false,
+        "accepted": 0,
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "region": "기타",
+        "name": "MOST",
+        "url": "https://most.gov.vn/",
+        "checked": false,
+        "accepted": 0,
+        "error": "fetch failed"
+      },
+      {
+        "region": "기타",
+        "name": "DTI",
+        "url": "https://www.dti.gov.ph/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      }
+    ],
+    "filteredOut": 42,
+    "failures": []
+  }
+}

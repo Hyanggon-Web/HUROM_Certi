@@ -1,0 +1,303 @@
+{
+  "generatedAt": "2026-10-11T23:00:00.000Z",
+  "periodStart": "2026-10-05",
+  "periodEnd": "2026-10-11",
+  "items": [
+    {
+      "id": "74cbdc216cd3bc5e",
+      "title": "화물용 전기 자전거 안 전기 준·주행 규정 신설…판로 열린다 [옴부즈만 ...",
+      "summary": "국가 기술표준원 도 자전거법 개정에 발맞추어 카고바이크의 안전성을 보장할 「 전기용품 및 생활 용품 안전관리법」 하위규정인 KC 안전인증 기준을 적기에 마련하겠다고 답했다. 이모빌리티 업계는 이번 규제 개선에 대해...",
+      "region": "한국",
+      "category": "KC",
+      "date": "2026-10-08",
+      "url": "https://www.news1.kr/industry/sb-founded/6313735",
+      "source": "NAVER 뉴스 검색",
+      "sourceType": "naver-news-search",
+      "verification": "검색 결과 — 공식 원문 확인 필요",
+      "titleKo": "화물용 전기 자전거 안 전기 준·주행 규정 신설…판로 열린다 [옴부즈만 ...",
+      "summaryKo": "국가 기술표준원 도 자전거법 개정에 발맞추어 카고바이크의 안전성을 보장할 「 전기용품 및 생활 용품 안전관리법」 하위규정인 KC 안전인증 기준을 적기에 마련하겠다고 답했다. 이모빌리티 업계는 이번 규제 개선에 대해..."
+    },
+    {
+      "id": "5c8fb77bdd235388",
+      "title": "Electrical Safety and Other Legislation Amendment Act 2024 - WorkSafe.qld.gov",
+      "summary": "Electrical Safety and Other Legislation Amendment Act 2024 WorkSafe.qld.gov",
+      "region": "기타",
+      "category": "기타 국가 전기안전",
+      "date": "2026-10-06",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQclU0bTl5QVozNGZuR2FjWmFaYWJ2TllwNFdVa1g4d2NmcV9WZlExazNnYVc5NXlabmNwNzZyOVZXTjlsd1FrdUthNHNXQUh5NEp5ZllTdzBKUW9aWWY3SXA1RTBMemttSGx4eElmQjcxS0ZGVU5VejNEZlB6S3ZvLS1Idk92QWJ1RDROTnRFeWpyQnBmbWEtXzVqaWppZ1N1S1lfYm1tZ1R2Z2NvRFo4?oc=5",
+      "source": "Google News RSS",
+      "sourceType": "official-site-search",
+      "verification": "검색 결과 — 공식 원문 확인 필요",
+      "titleKo": "전기 안전 및 기타 법률 개정법 2024 - WorkSafe.qld.gov",
+      "summaryKo": "전기 안전 및 기타 법률 개정법 2024 WorkSafe.qld.gov"
+    }
+  ],
+  "fcmItems": [],
+  "collection": {
+    "fcmStats": {
+      "queries": 10,
+      "returned": 407,
+      "candidates": 7,
+      "accepted": 0,
+      "errors": [],
+      "rejected": [
+        {
+          "title": "FD&C Red No. 3 - U.S. Food and Drug Administration (.gov)",
+          "region": "미국",
+          "date": "2026-10-05",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "FDA may allow some toxic chemicals to be added to food without safety review. Experts are alarmed - The Guardian",
+          "region": "미국",
+          "date": "2026-10-10",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "How the packaging industry is regulated in the UK - Packaging Gateway",
+          "region": "EU",
+          "date": "2026-10-07",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "一次性铝箔餐具铝迁移量超标？检察公益诉讼推动全链条整改 - Sohu",
+          "region": "중국",
+          "date": "2026-10-06",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "存在铝迁移量超标 深圳查获不合格铝箔餐具 - 国际 - 国际拼盘 - Sin Chew Daily",
+          "region": "중국",
+          "date": "2026-10-09",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "GC–MS Reveals Hidden Chemicals in Bioplastic Food Packaging - Chromatography Online",
+          "region": "국제",
+          "date": "2026-10-09",
+          "reason": "FCM subject not matched"
+        },
+        {
+          "title": "FDA may allow some toxic chemicals to be added to food without safety review. Experts are alarmed - The Guardian",
+          "region": "국제",
+          "date": "2026-10-10",
+          "reason": "FCM subject not matched"
+        }
+      ]
+    },
+    "source": "Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",
+    "successfulQueries": 49,
+    "totalQueries": 39,
+    "regionStats": {
+      "미국": {
+        "queries": 5,
+        "returned": 9,
+        "accepted": 7,
+        "errors": []
+      },
+      "EU": {
+        "queries": 8,
+        "returned": 3,
+        "accepted": 1,
+        "errors": []
+      },
+      "한국": {
+        "queries": 10,
+        "returned": 800,
+        "accepted": 28,
+        "errors": []
+      },
+      "중국": {
+        "queries": 5,
+        "returned": 2,
+        "accepted": 2,
+        "errors": []
+      },
+      "일본": {
+        "queries": 3,
+        "returned": 4,
+        "accepted": 4,
+        "errors": []
+      },
+      "국제": {
+        "queries": 7,
+        "returned": 6,
+        "accepted": 4,
+        "errors": []
+      },
+      "기타": {
+        "queries": 11,
+        "returned": 44,
+        "accepted": 32,
+        "errors": []
+      }
+    },
+    "regionStatus": {
+      "미국": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 5,
+        "returned": 9,
+        "errors": []
+      },
+      "EU": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 8,
+        "returned": 3,
+        "errors": []
+      },
+      "한국": {
+        "count": 1,
+        "status": "수집됨",
+        "queries": 10,
+        "returned": 800,
+        "errors": []
+      },
+      "중국": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 5,
+        "returned": 2,
+        "errors": []
+      },
+      "일본": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 3,
+        "returned": 4,
+        "errors": []
+      },
+      "국제": {
+        "count": 0,
+        "status": "해당 기간 검색 결과 없음 또는 확인 불가",
+        "queries": 7,
+        "returned": 6,
+        "errors": []
+      },
+      "기타": {
+        "count": 1,
+        "status": "수집됨",
+        "queries": 11,
+        "returned": 44,
+        "errors": []
+      }
+    },
+    "officialCrawl": [
+      {
+        "region": "미국",
+        "name": "UL Standards & Engagement",
+        "url": "https://ulse.org/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "EU",
+        "name": "European Commission",
+        "url": "https://single-market-economy.ec.europa.eu/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "EU",
+        "name": "EUR-Lex",
+        "url": "https://eur-lex.europa.eu/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "한국",
+        "name": "국가기술표준원 고시·공고",
+        "url": "https://www.kats.go.kr/content.do?cmsid=239",
+        "checked": false,
+        "accepted": 0,
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "region": "중국",
+        "name": "CNCA",
+        "url": "https://www.cnca.gov.cn/",
+        "checked": false,
+        "accepted": 0,
+        "error": "fetch failed"
+      },
+      {
+        "region": "중국",
+        "name": "SAMR",
+        "url": "https://www.samr.gov.cn/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "일본",
+        "name": "METI",
+        "url": "https://www.meti.go.jp/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "국제",
+        "name": "IEC",
+        "url": "https://www.iec.ch/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "국제",
+        "name": "ISO",
+        "url": "https://www.iso.org/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "국제",
+        "name": "IECEE",
+        "url": "https://www.iecee.org/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      },
+      {
+        "region": "기타",
+        "name": "BIS",
+        "url": "https://www.bis.gov.in/",
+        "checked": true,
+        "accepted": 0,
+        "error": null
+      },
+      {
+        "region": "기타",
+        "name": "BSN",
+        "url": "https://www.bsn.go.id/",
+        "checked": false,
+        "accepted": 0,
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "region": "기타",
+        "name": "MOST",
+        "url": "https://most.gov.vn/",
+        "checked": false,
+        "accepted": 0,
+        "error": "fetch failed"
+      },
+      {
+        "region": "기타",
+        "name": "DTI",
+        "url": "https://www.dti.gov.ph/",
+        "checked": false,
+        "accepted": 0,
+        "error": "HTTP 403"
+      }
+    ],
+    "filteredOut": 69,
+    "failures": []
+  }
+}
