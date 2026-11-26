@@ -9,14 +9,24 @@ const naverId=process.env.NAVER_CLIENT_ID;
 const naverSecret=process.env.NAVER_CLIENT_SECRET;
 async function searchNaverNews(query){
  if(!naverId||!naverSecret)throw Error("NAVER API HUB credentials missing");
- const url=new URL("https://naverapihub.apigw.ntruss.com/search/v1/news");
- for(const [key,value] of Object.entries({query,display:"100",start:"1",sort:"date"}))url.searchParams.set(key,value);
- const response=await fetch(url,{headers:{"X-NCP-APIGW-API-KEY-ID":naverId,"X-NCP-APIGW-API-KEY":naverSecret},signal:AbortSignal.timeout(18000)});
- if(!response.ok)throw Error("NAVER API HUB HTTP "+response.status);
- const data=await response.json();
- if(!Array.isArray(data.items))throw Error("Invalid NAVER news response");
  const strip=s=>String(s||"").replace(/<[^>]+>/g," ").replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/\s+/g," ").trim();
- return {items:data.items.map(item=>({title:strip(item.title),isoDate:item.pubDate,link:item.originallink||item.link,contentSnippet:strip(item.description),source:{title:"NAVER 뉴스 검색"}}))};
+ const entries=[];
+ const pageLimit=process.argv.includes("--archive-only")?10:1;
+ for(let page=0;page<pageLimit;page++){
+  const url=new URL("https://naverapihub.apigw.ntruss.com/search/v1/news");
+  for(const [key,value] of Object.entries({query,display:"100",start:String(page*100+1),sort:"date"}))url.searchParams.set(key,value);
+  const response=await fetch(url,{headers:{"X-NCP-APIGW-API-KEY-ID":naverId,"X-NCP-APIGW-API-KEY":naverSecret},signal:AbortSignal.timeout(18000)});
+  if(!response.ok)throw Error("NAVER API HUB HTTP "+response.status);
+  const data=await response.json();
+  if(!Array.isArray(data.items))throw Error("Invalid NAVER news response");
+  entries.push(...data.items.map(item=>({title:strip(item.title),isoDate:item.pubDate,link:item.originallink||item.link,contentSnippet:strip(item.description),source:{title:"NAVER 뉴스 검색"}})));
+  if(!archiveOnly||data.items.length<100)break;
+  // Naver returns newest first. Stop when the historical target week is reached.
+  const lastDate=Date.parse(data.items[data.items.length-1]?.pubDate||"");
+  if(Number.isFinite(lastDate)&&lastDate<Date.parse(start+"T00:00:00Z"))break;
+  await new Promise(resolve=>setTimeout(resolve,300));
+ }
+ return {items:entries};
 }
 async function searchNews(source,query){
  if(source.region==="한국")return searchNaverNews(source.q);
@@ -35,6 +45,15 @@ const monday=new Date(issueDate+"T00:00:00Z");
 const previous=n=>new Date(monday.getTime()-n*86400000).toISOString().slice(0,10);
 const start=arg("--start")||previous(7),end=arg("--end")||previous(1);
 if(!dateOK(start)||!dateOK(end)||start>end)throw Error("Invalid period");
+const archiveOnly=args.includes("--archive-only");
+const skipExisting=args.includes("--skip-existing");
+if(archiveOnly&&skipExisting){
+ try{
+  await fs.access("data/archive/"+issueDate+".json");
+  console.log("Historical issue already exists; preserving",issueDate);
+  process.exit(0);
+ }catch{}
+}
 const fcmSources=[
  {region:"미국",category:"FDA 식품접촉",q:'"food contact" FDA regulation amendment'},
  {region:"EU",category:"EU FCM",q:'"food contact materials" EU regulation amendment'},
@@ -216,5 +235,5 @@ const regionStatus=Object.fromEntries(coveredRegions.map(region=>{
 const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,fcmItems,collection:{fcmStats,source:"Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,filteredOut:results.length-items.length,failures}};
 await fs.mkdir("data/archive",{recursive:true});
 await fs.writeFile("data/archive/"+issueDate+".json",JSON.stringify(output,null,2)+"\n");
-await fs.writeFile("data/latest.json",JSON.stringify(output,null,2)+"\n");
+if(!archiveOnly)await fs.writeFile("data/latest.json",JSON.stringify(output,null,2)+"\n");
 console.log("Published",items.length,"articles",start,end,"successful queries",success+"/"+sources.length);
