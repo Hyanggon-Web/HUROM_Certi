@@ -46,6 +46,7 @@ const previous=n=>new Date(monday.getTime()-n*86400000).toISOString().slice(0,10
 const start=arg("--start")||previous(7),end=arg("--end")||previous(1);
 if(!dateOK(start)||!dateOK(end)||start>end)throw Error("Invalid period");
 const archiveOnly=args.includes("--archive-only");
+const certOnly=args.includes("--cert-only");
 const skipExisting=args.includes("--skip-existing");
 if(archiveOnly&&skipExisting){
  try{
@@ -133,7 +134,7 @@ const direct=await crawlOfficial(start,end);
 const results=[...direct.items];
 const fcmResults=[];const fcmStats={queries:0,returned:0,candidates:0,accepted:0,errors:[]};const failures=[];let success=0;
 for(const entry of direct.items){regionStats[entry.region].accepted++}
-for(const source of [...fcmSources.map(x=>({...x,fcm:true})),...officialSources.map(x=>({...x,officialSearch:true,q:"site:"+x.domain+" "+x.q})),...sources]){
+for(const source of [...(certOnly?[]:fcmSources.map(x=>({...x,fcm:true}))),...officialSources.map(x=>({...x,officialSearch:true,q:"site:"+x.domain+" "+x.q})),...sources]){
  try{
   const query=source.q+" after:"+start+" before:"+nextDay;
   if(source.fcm&&source.region!=="한국")await new Promise(resolve=>setTimeout(resolve,1200));
@@ -242,7 +243,11 @@ const regionStatus=Object.fromEntries(coveredRegions.map(region=>{
  const stats=regionStats[region];
  return [region,{count,status:count>0?"수집됨":stats.errors.length>=stats.queries&&stats.queries>0?"수집 오류":"해당 기간 검색 결과 없음 또는 확인 불가",queries:stats.queries,returned:stats.returned,errors:stats.errors}];
 }));
-const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,fcmItems,collection:{fcmStats,source:"Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,filteredOut:results.length-items.length,certificationRejected:rejected.map(({item,reason})=>({region:item.region,category:item.category,date:item.date,title:item.title,reason})).slice(0,300),certificationPublishedByRegion:Object.fromEntries(coveredRegions.map(region=>[region,items.filter(item=>item.region===region).length])),failures}};
+let preservedFCM=null;
+if(certOnly){
+ try{preservedFCM=JSON.parse(await fs.readFile("data/archive/"+issueDate+".json","utf8"))}catch{}
+}
+const output={generatedAt:new Date(issueDate+"T08:00:00+09:00").toISOString(),periodStart:start,periodEnd:end,items,fcmItems:certOnly?(preservedFCM?.fcmItems||[]):fcmItems,collection:{fcmStats:certOnly?(preservedFCM?.collection?.fcmStats||fcmStats):fcmStats,source:"Official direct HTML crawl + NAVER API HUB (Korea) + Google News RSS (other regions)",successfulQueries:success,totalQueries:sources.length+officialSources.length,regionStats,regionStatus,officialCrawl:direct.status,filteredOut:results.length-items.length,certificationRejected:rejected.map(({item,reason})=>({region:item.region,category:item.category,date:item.date,title:item.title,reason})).slice(0,300),certificationPublishedByRegion:Object.fromEntries(coveredRegions.map(region=>[region,items.filter(item=>item.region===region).length])),failures}};
 await fs.mkdir("data/archive",{recursive:true});
 await fs.writeFile("data/archive/"+issueDate+".json",JSON.stringify(output,null,2)+"\n");
 if(!archiveOnly)await fs.writeFile("data/latest.json",JSON.stringify(output,null,2)+"\n");
