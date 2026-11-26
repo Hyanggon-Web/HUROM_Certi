@@ -1,4 +1,4 @@
-name: Backfill historical weekly letters
+name: Rebuild archived certification issues
 on:
   workflow_dispatch:
   push:
@@ -12,9 +12,9 @@ concurrency:
   cancel-in-progress: false
 jobs:
   collect:
-    name: Backfill ${{ matrix.issue }}
+    name: Rebuild ${{ matrix.issue }}
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     strategy:
       fail-fast: false
       matrix:
@@ -34,17 +34,23 @@ jobs:
           - issue: '2026-11-09'
             start: '2026-11-02'
             end: '2026-11-08'
+          - issue: '2026-11-16'
+            start: '2026-11-09'
+            end: '2026-11-15'
+          - issue: '2026-11-23'
+            start: '2026-11-16'
+            end: '2026-11-22'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - run: npm install --no-audit --no-fund
-      - name: Collect historical week without changing latest
+      - name: Recollect electrical certification for selected issue
         env:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-        run: node scripts/update.mjs --issue-date "${{ matrix.issue }}" --start "${{ matrix.start }}" --end "${{ matrix.end }}" --archive-only --skip-existing
+        run: node scripts/update.mjs --issue-date "${{ matrix.issue }}" --start "${{ matrix.start }}" --end "${{ matrix.end }}" --archive-only --cert-only
       - uses: actions/upload-artifact@v4
         with:
           name: issue-${{ matrix.issue }}
@@ -60,14 +66,15 @@ jobs:
           pattern: issue-*
           path: data/archive
           merge-multiple: true
-      - name: Save historical issues without overwriting newer letters
+      - name: Publish archive and latest copy
         run: |
+          cp data/archive/2026-11-23.json data/latest.json
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git fetch origin main
           git rebase origin/main
-          git add data/archive/
+          git add data/archive/ data/latest.json
           if ! git diff --cached --quiet; then
-            git commit -m 'data: archive historical weekly certification issues'
+            git commit -m 'data: rebuild all archived certification weeks using refined matching'
             git push origin HEAD:main
           fi
